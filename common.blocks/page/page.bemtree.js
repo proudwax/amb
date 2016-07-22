@@ -4,6 +4,9 @@ block('page').content()(function() {
             block: 'header'
         },
         {
+            block: 'search'
+        },
+        {
             block: 'body'
         },
         {
