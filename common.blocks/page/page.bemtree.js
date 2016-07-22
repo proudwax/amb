@@ -1,7 +1,8 @@
 block('page').content()(function() {
     return [
         {
-            block: 'header'
+            block: 'header',
+            mods: { theme: 'amb' }
         },
         {
             block: 'search'

@@ -1,0 +1,50 @@
+ctx = '.body'
+{ctx} {
+  box-sizing: border-box;
+  position: relative;
+  background-color: #fff;
+
+  width: auto;
+  margin-top: 100px;
+  margin-left: 18rem;
+  margin-bottom: 2rem;
+  margin-right: 2rem;
+  padding: .5rem 1rem;
+
+  &:after{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    content: '';
+    box-shadow: 0 -1px 0 #e5e5e5, 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.24);
+  }
+
+  @media only screen and (min-width: 48em) {
+    &{
+      margin-right: 240px;
+    }
+  }
+
+  @media only screen and (min-width: 75em) {
+    &{
+      margin-right: 7rem;
+    }
+  }
+
+  @media only screen and (min-width: 109em) {
+    &{
+      max-width: 75rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  @media screen and (orientation: portrait) {
+    &{
+      margin-right: 4rem;
+    }
+  }
+}

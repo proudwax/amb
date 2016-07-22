@@ -32,7 +32,7 @@ block('root').replace()(function() {
             { elem : 'meta', attrs : { name : 'viewport', content : 'width=device-width, initial-scale=1' } }
         ],
         mods: {
-            theme: 'islands',
+            theme: 'amb',
             view: data.view
         }
     };
