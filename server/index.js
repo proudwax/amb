@@ -43,6 +43,8 @@ app
     .use(slashes());
     // TODO: csrf, gzip
 
+var data = require('../data');
+
 passport.serializeUser(function(user, done) {
     done(null, JSON.stringify(user));
 });
@@ -56,17 +58,21 @@ app.get('/ping/', function(req, res) {
 });
 
 app.get('/', function(req, res) {
-    render(req, res, {
-        view: 'index',
-        title: 'Main page',
-        meta: {
-            description: 'Page description',
-            og: {
-                url: 'https://site.com',
-                siteName: 'Site name'
-            }
-        }
-    })
+
+  json = Object.assign({}, {view: 'index'}, data);
+  render(req, res, json, req.xhr ? { block: 'content' } : null);
+  
+  // render(req, res, {
+  //     view: 'index',
+  //     title: 'Main page',
+  //     meta: {
+  //         description: 'Page description',
+  //         og: {
+  //             url: 'https://site.com',
+  //             siteName: 'Site name'
+  //         }
+  //     }
+  // })
 });
 
 app.get('*', function(req, res) {

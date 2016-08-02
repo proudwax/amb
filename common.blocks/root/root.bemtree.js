@@ -24,6 +24,7 @@ block('root').replace()(function() {
         ],
         head: [
             { elem: 'meta', attrs: { name: 'description', content: meta.description } },
+            { elem: 'meta', attrs: { name: 'keywords', content: meta.keywords } },
             { elem: 'meta', attrs: { property: 'og:title', content: og.title || data.title } },
             { elem: 'meta', attrs: { property: 'og:url', content: og.url } },
             { elem: 'meta', attrs: { property: 'og:site_name', content: og.siteName } },

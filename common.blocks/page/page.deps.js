@@ -5,7 +5,7 @@
         },
         { block: 'header', mods: { theme: 'amb' } },
         'search',
-        'body',
+        'content',
         'footer'
     ]
 })

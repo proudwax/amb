@@ -1,4 +1,4 @@
-block('body').content()(function() {
+block('content').content()(function() {
     return [
         {
           elem: 'container',

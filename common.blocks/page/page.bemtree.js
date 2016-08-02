@@ -8,7 +8,7 @@ block('page').content()(function() {
             block: 'search'
         },
         {
-            block: 'body'
+            block: 'content'
         },
         {
             block: 'footer'
