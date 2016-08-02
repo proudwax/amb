@@ -5,7 +5,7 @@ block('page').content()(function() {
             mods: { theme: 'amb' }
         },
         {
-            block: 'search'
+            block: 'filter'
         },
         {
             block: 'content'
