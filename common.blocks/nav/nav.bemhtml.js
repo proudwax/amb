@@ -4,7 +4,6 @@ block('nav')(
   elem('item')(
     tag()('li'),
     content()(function(){
-      console.log(this.ctx);
       return {
         elem: 'link',
         elemMods: { current: this.ctx.current },
