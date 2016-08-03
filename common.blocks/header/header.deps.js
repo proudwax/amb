@@ -1,6 +1,9 @@
 ({
     shouldDeps: [
       'logo',
-      'nav'
+      'nav',
+      'contacts',
+      'basket',
+      'sticky'
     ]
 })

@@ -1,0 +1,40 @@
+ctx = '.nav'
+{ctx} {
+  box-sizing: border-box;
+  list-style: none;
+  display: block;
+
+  font-size: 1rem;
+
+  margin: 0;
+  padding: 0;
+
+  &__item{
+    display: inline-block;
+    white-space: nowrap;
+
+    line-height: 2rem;
+    padding: 4px;
+  }
+
+  &__link{
+    color: #333;
+    display: block;
+    text-decoration: none;
+    transition: color 0.3s ease 0s;
+
+    &_current{
+      color: #0068af;
+    }
+  }
+
+  &__link:hover{
+    color: #0068af;
+  }
+
+  @media only screen and (min-width: 48em) {
+    &{
+      font-size: 1.2rem;
+    }
+  }
+}

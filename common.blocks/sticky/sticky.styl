@@ -1,0 +1,38 @@
+ctx = '.sticky'
+{ctx} {
+	position: relative;
+
+	&__panel{
+		transition: all 0.3s ease 0.1s;
+	}
+
+	&__panel_shadow:after{
+		content: '';
+
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+
+		z-index: -1;
+		box-shadow:0 5px 5px 0 rgba(0,0,0,.14),0 10px 10px 0 rgba(0,0,0,.12),0 4px 4px -1px rgba(0,0,0,.2);
+	}
+
+	&__backing{
+		display: none;
+		position: relative;
+	}
+
+	&_fixed > &__panel{
+		position: fixed;
+		background: transparent;
+		top: 0;
+		z-index: 10;
+		width: 100%;
+	}
+
+	&_fixed > &__backing{
+		display: block;
+	}
+}

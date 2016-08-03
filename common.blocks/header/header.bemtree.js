@@ -1,13 +1,38 @@
 block('header').content()(function() {
     return [
       {
-        block: 'logo',
-        mix: { block: 'header', elem: 'logo' }
+        elem: 'layout',
+        elemMods: { dark: true },
+        content: [
+          {
+            block: 'logo',
+            mix: { block: 'header', elem: 'logo' }
+          },
+          {
+            block: 'contacts',
+            mix: { block: 'header', elem: 'contacts' }
+          },
+          {
+            block: 'basket',
+            mix: { block: 'header', elem: 'basket' }
+          }
+        ]
       },
       {
-        block: 'nav',
-        mix: { block: 'header', elem: 'nav' }
-      },
-      'header content'
+        block: 'sticky',
+        content: [
+          {
+            block: 'header',
+            elem: 'layout',
+            elemMods: { light: true },
+            content: [
+              {
+                block: 'nav',
+                mix: { block: 'header', elem: 'nav' }
+              }
+            ]
+          }
+        ]
+      }
     ];
 });
