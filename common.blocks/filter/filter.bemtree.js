@@ -1,4 +1,4 @@
-block('search').content()(function() {
+block('filter').content()(function() {
 
 
 
