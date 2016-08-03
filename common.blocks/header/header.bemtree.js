@@ -10,7 +10,13 @@ block('header').content()(function() {
           },
           {
             block: 'contacts',
-            mix: { block: 'header', elem: 'contacts' }
+            mix: { block: 'header', elem: 'contacts' },
+            content:[
+              {
+                elem: 'phone',
+                elemMods: { light: true }
+              }
+            ]
           },
           {
             block: 'basket',
