@@ -2,7 +2,7 @@ block('header').content()(function() {
     return [
       {
         elem: 'layout',
-        elemMods: { dark: true },
+        elemMods: { dark: true, flex: true },
         content: [
           {
             block: 'logo',
