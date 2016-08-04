@@ -4,7 +4,7 @@
 
 #### Связь
 
-Определяет порядок получения фокуса при переходе между контролами с помощью клавиши `Tab`.
+Связываем <code>link</code> и <code>sidebar</code> через метод <code>setAnchor()</code>, и добавляем модификатор<code>.sidebar_visible</code> при клике.
 
 ```js
 modules.define('link-sidebar', ['i-bem__dom'], function(provide, BEMDOM) {
