@@ -2,7 +2,7 @@ block('header').content()(function() {
     return [
       {
         elem: 'layout',
-        elemMods: { dark: true, flex: true },
+        elemMods: { dark: true },
         content: [
           {
             block: 'logo',
@@ -11,10 +11,10 @@ block('header').content()(function() {
           {
             block: 'contacts',
             mix: { block: 'header', elem: 'contacts' },
+            mods: { light: true },
             content:[
               {
-                elem: 'phone',
-                elemMods: { light: true }
+                elem: 'phone'
               }
             ]
           },

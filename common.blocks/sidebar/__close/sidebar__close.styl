@@ -1,0 +1,31 @@
+ctx = '.sidebar'
+{ctx} {
+	&__close{
+		position: absolute;
+		top: 1rem;
+		right: 1rem;
+
+		& .icon{
+			background: url('../image/close.svg');
+			background-repeat: no-repeat;
+
+			width: 14px;
+			height: 14px;
+
+			opacity: .3;
+			transition: opacity 0.3s ease 0s;
+
+			&:hover{
+				opacity: 1;
+				cursor: pointer;
+			}
+		}
+	}
+
+	&_display{
+		.sidebar__close{
+			display: none;
+		}
+	}
+
+}

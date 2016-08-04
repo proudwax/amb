@@ -5,6 +5,8 @@ ctx = '.header_theme_amb'
   z-index: 2;
   width: 100%;
 
+  font-weight: 300;
+
   .header{
     &__layout{
       &_light{
@@ -13,11 +15,11 @@ ctx = '.header_theme_amb'
       &_dark{
         background: #424a55;
       }
+    }
 
-      &_flex{
-        display: flex;
-        flex-flow: row nowrap;
-      }
+    &__logo, &__contacts{
+      display: inline-block;
+      vertical-align: bottom;
     }
   }
 }

@@ -2,21 +2,22 @@ ctx = '.contacts'
 {ctx} {
   color: #fff;
 
+  &_light{
+    color: #fff;
+
+    &:hover{
+      color: #fee481;
+    }
+  }
+
   &__phone{
     line-height: 3rem;
     font-size: 1.5rem;
 
-
     text-decoration: none;
+    color: inherit
+
     transition: color 0.3s ease 0s;
-
-    &_light{
-      color: #fff;
-
-      &:hover{
-        color: #fee481;
-      }
-    }
   }
 
   &__phone::before{
