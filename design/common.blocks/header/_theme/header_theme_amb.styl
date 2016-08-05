@@ -7,4 +7,58 @@ ctx = '.header_theme_amb'
 
   font-weight: 300;
   background: #424a55;
+
+  display: flex;
+  flex: 0 1 auto;
+  flex-flow: row wrap;
+
+  .header{
+    &__logo{
+      flex-basis: 100%;
+      max-width: 100%;
+
+      text-align: center;
+    }
+
+    &__contacts{
+      flex-basis: 100%;
+      max-width: 100%;
+    }
+
+    &__basket{
+      flex-basis: 100%;
+      max-width: 100%;
+    }
+
+    @media only screen and (min-width: 800px) {
+      &__contacts{
+        flex-basis: 50%;
+        max-width: 50%;
+      }
+
+      &__basket{
+        flex-basis: 50%;
+        max-width: 50%;
+      }
+    }
+
+    @media only screen and (min-width: 1200px) {
+      &__logo{
+        flex-basis: 33%;
+        max-width: 33%;
+
+        text-align: left;
+      }  
+
+      &__contacts{
+        flex-basis: 34%;
+        max-width: 34%;
+      }
+
+      &__basket{
+        flex-basis: 33%;
+        max-width: 33%;
+      }
+    }
+  }
 }
