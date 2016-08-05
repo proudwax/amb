@@ -2,11 +2,11 @@ ctx = '.sticky'
 {ctx} {
 	position: relative;
 
-	&__panel{
+	&__container{
 		transition: all 0.3s ease 0.1s;
 	}
 
-	&__panel_shadow:after{
+	&__container_shadow:after{
 		content: '';
 
 		position: absolute;
@@ -24,7 +24,7 @@ ctx = '.sticky'
 		position: relative;
 	}
 
-	&_fixed > &__panel{
+	&_fixed > &__container{
 		position: fixed;
 		background: transparent;
 		top: 0;
@@ -34,5 +34,29 @@ ctx = '.sticky'
 
 	&_fixed > &__backing{
 		display: block;
+	}
+
+	@media only screen and (min-width: 420px) {
+		&_fixed > &__container{
+			width: 100%;
+		}
+	}
+
+	@media only screen and (min-width: 800px) {
+		&_fixed > &__container{
+			width: calc(100% - 160px);
+		}
+	}
+
+	@media only screen and (min-width: 1200px) {
+		&_fixed > &__container{
+			width: 960px;
+		}
+	}
+
+	@media only screen and (min-width: 1450px) {
+		&_fixed > &__container{
+			width: 1200px;
+		}
 	}
 }

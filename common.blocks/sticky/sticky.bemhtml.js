@@ -3,7 +3,7 @@ block('sticky')(
 	content()(function() {
 		return [
 			{
-				elem: 'panel',
+				elem: 'container',
 				elemMods: this.ctx.panelMods,
 				mix: this.ctx.panelMix,
 				cls: this.ctx.panelCls,

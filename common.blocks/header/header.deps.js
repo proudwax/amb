@@ -3,7 +3,6 @@
       'logo',
       'nav',
       'contacts',
-      'basket',
-      'sticky'
+      'basket'
     ]
 })

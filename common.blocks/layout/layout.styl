@@ -1,0 +1,65 @@
+ctx = '.layout'
+{ctx} {
+  box-sizing: border-box;
+  display: flex;
+
+  flex: 0 1 auto;
+  flex-flow: row wrap;
+
+  margin-top: 1rem;
+
+  &__col{
+    box-sizing: border-box;
+    flex-grow: 1;
+    flex-basis: 0;
+    max-width: 100%;
+    padding-left: .5rem;
+    padding-right: .5rem;
+
+    &_sidebar{
+      flex-basis: 100%;
+      max-width: 100%;
+    }
+
+    &_main{
+      flex-basis: 100%;
+      max-width: 100%;
+    }
+
+    @media only screen and (max-width: 419px) {
+      &_sidebar{
+        order: 0;
+      }
+
+      &_main{
+        order: 1;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 420px) {
+  {ctx}{
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
+
+    &__col{
+      &_sidebar{
+        flex-basis: 33.333%;
+        max-width: 33.333%;
+      }
+
+      &_main{
+        flex-basis: 66.667%;
+        max-width: 66.667%;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  {ctx}{
+    margin-left: -.5rem;
+    margin-right: -.5rem;
+  }
+}

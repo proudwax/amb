@@ -2,4 +2,40 @@ ctx = '.page'
 {ctx} {
   margin: 0;
   padding: 0;
+
+  &__container{
+    width: 100%;
+    margin: 0 auto;
+    transition: all 0.3s ease 0.1s;
+  }
+}
+
+@media only screen and (min-width: 420px) {
+  {ctx}__container{
+    max-width: 100%;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  {ctx}__container{
+    max-width: calc(100% - 160px);
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  {ctx}__container{
+    max-width: 960px;
+  }
+}
+
+@media only screen and (min-width: 1450px) {
+  {ctx}__container{
+    max-width: 1200px;
+  }
+}
+
+@media screen and (orientation: portrait) {
+  {ctx}__container{
+    width: 100%;
+  }
 }

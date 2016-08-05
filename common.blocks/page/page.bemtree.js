@@ -5,10 +5,35 @@ block('page').content()(function() {
             mods: { theme: 'amb' }
         },
         {
-            block: 'filter'
+          block: 'sticky',
+          content: [
+            {
+              block: 'nav'
+            }
+          ]
         },
         {
-            block: 'content'
+            block: 'layout',
+            content: [
+              {
+                elem: 'col',
+                elemMods: { main: true },
+                content: [
+                  {
+                    block: 'content'
+                  }
+                ]
+              },
+              {
+                elem: 'col',
+                elemMods: { sidebar: true },
+                content: [
+                  {
+                    block: 'filter'
+                  }
+                ]
+              }
+            ]
         },
         {
             block: 'footer'

@@ -1,5 +1,5 @@
-/* 
-	this.sticky_height 	-	высота panel и backing элементов
+/*
+	this.sticky_height 	-	высота container и backing элементов
 	this.sticky_top		-	отступ сверху до обработки
 */
 
@@ -13,21 +13,21 @@ provide(BEMDOM.decl(this.name, {
 		'js': {
             'inited': function() {
 				var _this = this;
-				
-				this.elem('backing').css('height', this.domElem[0].offsetHeight); 
+
+				this.elem('backing').css('height', this.domElem[0].offsetHeight);
 				this.sticky_height = this.domElem[0].offsetHeight;
 				this.sticky_top = this.domElem[0].offsetTop != 0 ? this.domElem[0].offsetTop : this.elem('backing').offset().top;
 
-				this.setMod('fixed', BEMDOM.win.scrollTop() >= this.sticky_top);	
-				this.setMod(this.elem('panel'), 'shadow', BEMDOM.win.scrollTop() >= this.sticky_top);
-				
+				this.setMod('fixed', BEMDOM.win.scrollTop() >= this.sticky_top);
+				this.setMod(this.elem('container'), 'shadow', BEMDOM.win.scrollTop() >= this.sticky_top);
+
 				this._scrollWin();
 				throttle(this._resizeWin(), 300);
-				
+
 				channels('onGoodsCard').on('click', function(e){
 					_this._resizeBlock();
 				});
-		
+
 				if(sticky_flag === undefined){
 					sticky_flag = true;
 					this._getIndent();
@@ -36,45 +36,45 @@ provide(BEMDOM.decl(this.name, {
         }
 	},
 	_scrollWin: function() {
-		
+
 		this.bindToWin('scroll', function(e) {
 			this.setMod('fixed', BEMDOM.win.scrollTop() >= this.sticky_top);
-			this.setMod(this.elem('panel'), 'shadow', BEMDOM.win.scrollTop() >= this.sticky_top);
+			this.setMod(this.elem('container'), 'shadow', BEMDOM.win.scrollTop() >= this.sticky_top);
 		});
 	},
 
 	_resizeWin: function() {
 		this.bindToWin('resize', function(e) {
 			this.sticky_top = this.domElem[0].offsetTop != 0 ? this.domElem[0].offsetTop : this.elem('backing').domElem[0].offsetTop;
-			
+
 			throttle(this._getIndent(), 300);
-			
+
 			this.setMod('fixed', BEMDOM.win.scrollTop() >= this.sticky_top);
-			this.setMod(this.elem('panel'), 'shadow', BEMDOM.win.scrollTop() >= this.sticky_top);
+			this.setMod(this.elem('container'), 'shadow', BEMDOM.win.scrollTop() >= this.sticky_top);
 		});
 	},
 
 	_resizeBlock: function(){
 		this.sticky_top = this.domElem[0].offsetTop != 0 ? this.domElem[0].offsetTop : this.elem('backing').domElem[0].offsetTop;
-			
+
 		this.setMod('fixed', BEMDOM.win.scrollTop() >= this.sticky_top);
-		this.setMod(this.elem('panel'), 'shadow', BEMDOM.win.scrollTop() >= this.sticky_top);		
-	}, 
+		this.setMod(this.elem('container'), 'shadow', BEMDOM.win.scrollTop() >= this.sticky_top);
+	},
 
 	_getIndent: function(){
 		arr = this.findBlockOutside('page').findBlocksInside('sticky');
 		// arr = BEMDOM.doc.find('.sticky');
-		
+
 		arr.reduce(function(indent, current, i){
 			current.sticky_top = current.sticky_top - indent;
 
-			current.elem('panel').css({'top': indent}); 
-			// current.elem('panel').css({'top': indent, 'z-index': 10 - i }); 
-			
+			current.elem('container').css({'top': indent});
+			// current.elem('container').css({'top': indent, 'z-index': 10 - i });
+
 			return indent + current.sticky_height;
 		}, 0);
-		
-		
+
+
 	}
 }));
 
