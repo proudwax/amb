@@ -4,7 +4,7 @@
 
 #### Связь
 
-Связываем <code>link</code> и <code>sidebar</code> через метод <code>setAnchor()</code>, и добавляем модификатор<code>.sidebar_visible</code> при клике.
+В блоке <code>link-sidebar</code> связываем <code>link</code> и <code>sidebar</code> через метод <code>setAnchor()</code>, и добавляем модификатор<code>.sidebar_visible</code> при клике.
 
 ```js
 modules.define('link-sidebar', ['i-bem__dom'], function(provide, BEMDOM) {
