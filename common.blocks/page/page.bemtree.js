@@ -6,9 +6,11 @@ block('page').content()(function() {
         },
         {
           block: 'sticky',
+          panelMods: { white: true },
           content: [
             {
-              block: 'nav'
+              block: 'nav',
+              mix: { block: 'layout' },
             }
           ]
         },
@@ -16,20 +18,25 @@ block('page').content()(function() {
             block: 'layout',
             content: [
               {
-                elem: 'col',
-                elemMods: { main: true },
+                elem: 'row',
                 content: [
                   {
-                    block: 'content'
-                  }
-                ]
-              },
-              {
-                elem: 'col',
-                elemMods: { sidebar: true },
-                content: [
+                    elem: 'col',
+                    elemMods: { main: true },
+                    content: [
+                      {
+                        block: 'content'
+                      }
+                    ]
+                  },
                   {
-                    block: 'filter'
+                    elem: 'col',
+                    elemMods: { sidebar: true },
+                    content: [
+                      {
+                        block: 'filter'
+                      }
+                    ]
                   }
                 ]
               }

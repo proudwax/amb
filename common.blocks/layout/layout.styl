@@ -1,12 +1,20 @@
 ctx = '.layout'
 {ctx} {
   box-sizing: border-box;
-  display: flex;
 
-  flex: 0 1 auto;
-  flex-flow: row wrap;
+  margin-left: auto;
+  margin-right: auto;
 
-  margin-top: 1rem;
+  &__row{
+    display: flex;
+
+    flex: 0 1 auto;
+    flex-flow: row wrap;
+
+    margin-top: 1rem;
+    margin-left: -.5rem;
+    margin-right: -.5rem;
+  }
 
   &__col{
     box-sizing: border-box;
@@ -40,9 +48,6 @@ ctx = '.layout'
 
 @media only screen and (min-width: 420px) {
   {ctx}{
-    margin-left: 2.5rem;
-    margin-right: 2.5rem;
-
     &__col{
       &_sidebar{
         flex-basis: 33.333%;
@@ -57,9 +62,32 @@ ctx = '.layout'
   }
 }
 
+@media only screen and (min-width: 420px) {
+  {ctx}{
+    max-width: 100%;
+  }
+}
+
 @media only screen and (min-width: 800px) {
   {ctx}{
-    margin-left: -.5rem;
-    margin-right: -.5rem;
+    max-width: calc(100% - 160px);
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  {ctx}{
+    max-width: 960px;
+  }
+}
+
+@media only screen and (min-width: 1450px) {
+  {ctx}{
+    max-width: 1200px;
+  }
+}
+
+@media screen and (orientation: portrait) {
+  {ctx}{
+    width: 100%;
   }
 }
