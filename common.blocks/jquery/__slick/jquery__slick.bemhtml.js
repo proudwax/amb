@@ -1,0 +1,3 @@
+block('jquery')(
+	js()(true)
+);

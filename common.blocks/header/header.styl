@@ -1,25 +1,162 @@
 ctx = '.header'
 {ctx} {
-  &__container{
-    max-width: calc(100% - 2rem);
-    margin: 0 auto;
-  }
+    box-sizing: border-box;
+    position: relative;
+    z-index: 2;
+    width: 100%;
 
-  @media only screen and (min-width: 50em) {
-    &__container{
-      max-width: calc(100% - 10em);
-    }
-  }
+    font-weight: 300;
+    background: #424a55
 
-  @media only screen and (min-width: 75em) {
     &__container{
-      max-width: 75rem;
-    }
-  }
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
 
-  @media screen and (orientation: portrait) {
-    &__container{
-      max-width: calc(100% - 4rem);
+      display: flex;
+
+      flex: 0 1 auto;
+      flex-flow: row wrap;
+
+      transition: all 0.3s ease 0s;
     }
+
+    &__logo, &__contacts, &__basket{
+      flex-basis: 100%;
+      max-width: 100%;
+
+      text-align: center;
+    }
+
+    &__contacts{
+
+    }
+
+    &__basket{
+
+    }
+}
+
+@media only screen and (min-width: 420px) {
+  {ctx}{
+      &__container{
+          max-width: 100%;
+      }
+
+      &__logo{
+          flex-basis: 100%;
+          max-width: 100%;
+
+          text-align: center;
+      }
+
+      &__contacts{
+          flex-basis: 100%;
+          max-width: 100%;
+
+          text-align: center;
+      }
+
+      &__basket{
+          flex-basis: 100%;
+          max-width: 100%;
+
+          text-align: center;
+      }
   }
+}
+
+@media only screen and (min-width: 800px) {
+    {ctx}{
+        &__container{
+            max-width: calc(100% - 160px);
+        }
+
+        &__logo{
+            flex-basis: 100%;
+            max-width: 100%;
+
+            text-align: center;
+        }
+
+        &__contacts{
+            flex-basis: 50%;
+            max-width: 50%;
+
+            text-align: left;
+        }
+
+        &__basket{
+            flex-basis: 50%;
+            max-width: 50%;
+
+            text-align: left;
+        }
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    {ctx}{
+        &__container{
+            max-width: 960px;
+        }
+
+        &__logo{
+            flex-basis: 33.333%;
+            max-width: 33.333%;
+
+            text-align: left;
+        }
+
+        &__contacts{
+            flex-basis: 33.333%;
+            max-width: 33.333%;
+
+            text-align: left;
+        }
+
+        &__basket{
+            flex-basis: 33.333%;
+            max-width: 33.333%;
+
+            text-align: left;
+        }
+    }
+}
+
+@media only screen and (min-width: 1450px) {
+    {ctx}{
+        &__container{
+            max-width: 1200px;
+        }
+
+        &__logo{
+            flex-basis: 33.333%;
+            max-width: 33.333%;
+
+            text-align: left;
+        }
+
+        &__contacts{
+            flex-basis: 33.333%;
+            max-width: 33.333%;
+
+            text-align: left;
+        }
+
+        &__basket{
+            flex-basis: 33.333%;
+            max-width: 33.333%;
+
+            text-align: left;
+        }
+    }
+}
+
+@media screen and (orientation: portrait) {
+    {ctx}{
+        &__container{
+            width: 100%;
+        }
+    }
 }

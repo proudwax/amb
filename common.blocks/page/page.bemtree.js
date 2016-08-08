@@ -1,8 +1,7 @@
 block('page').content()(function() {
     return [
         {
-            block: 'header',
-            mods: { theme: 'amb' }
+            block: 'header'
         },
         {
           block: 'sticky',
@@ -13,6 +12,10 @@ block('page').content()(function() {
               mix: { block: 'layout' },
             }
           ]
+        },
+        {
+            block: 'carousel',
+            mods: { slick: true }
         },
         {
             block: 'layout',

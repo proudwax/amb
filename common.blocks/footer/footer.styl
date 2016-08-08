@@ -1,27 +1,52 @@
 ctx = '.footer'
 {ctx} {
-  padding: .5rem 1rem;
+  padding: .5rem 0;
+  background-color: #0068af;
+  margin-top: 2rem;
+  color: #fff;
 
   &__container{
-    max-width: calc(100% - 2rem);
+    width: 100%;
     margin: 0 auto;
   }
+}
 
-  @media only screen and (min-width: 48em) {
-    &__container{
-      max-width: calc(100% - 240px);
-    }
+@media only screen and (min-width: 420px) {
+  {ctx}{
+      &__container{
+          max-width: 100%;
+      }
   }
+}
 
-  @media only screen and (min-width: 75em) {
-    &__container{
-      max-width: 75rem;
+@media only screen and (min-width: 800px) {
+    {ctx}{
+        &__container{
+            max-width: calc(100% - 160px);
+        }
     }
-  }
+}
 
-  @media screen and (orientation: portrait) {
-    &__container{
-      max-width: calc(100% - 4rem);
+@media only screen and (min-width: 1200px) {
+    {ctx}{
+        &__container{
+            max-width: 960px;
+        }
     }
-  }
+}
+
+@media only screen and (min-width: 1450px) {
+    {ctx}{
+        &__container{
+            max-width: 1200px;
+        }
+    }
+}
+
+@media screen and (orientation: portrait) {
+    {ctx}{
+        &__container{
+            width: 100%;
+        }
+    }
 }

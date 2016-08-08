@@ -3,7 +3,8 @@
         {
             mods: { view: ['404'], theme: 'amb' }
         },
-        { block: 'header', mods: { theme: 'amb' } },
+        'header',
+        { block: 'carousel', mods: { slick: true } },
         'sticky',
         'content',
         'layout',
