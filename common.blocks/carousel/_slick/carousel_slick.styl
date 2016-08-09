@@ -4,10 +4,36 @@ ctx = '.carousel_slick'
     margin-left: auto;
     margin-right: auto;
 
+    transition: all 0.3s ease 0s
+
     img{
     	max-width: 100%;
-    	height: 100vh;
     	object-fit: cover;
+    }
+}
+
+@media only screen and (max-width: 799px) {
+    {ctx} {
+        .slick-prev:before, .slick-next:before{
+            font-size: 48px;
+        }
+
+        .slick-prev, .slick-next{
+            width: 48px;
+            height: 48px;
+        }
+
+        .slick-next, .slick-prev{
+            z-index: 1;
+        }
+
+        .slick-prev{
+            left: 0;
+        }
+
+        .slick-next{
+            right: 0;
+        }
     }
 }
 

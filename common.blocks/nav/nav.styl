@@ -4,11 +4,65 @@ ctx = '.nav'
   list-style: none;
   display: block;
 
-  font-size: 1rem;
+  font-size: 1.2rem;
 
   margin: 0;
   padding: 0;
   width: 100%;
+
+  &__toggle{
+      display: none;
+      width: 2rem;
+      height: 3rem;
+      text-align: center;
+
+      padding: 4px;
+
+      line-height: 3rem;
+      vertical-align: bottom;
+
+      opacity: 0;
+      visibility: hidden;
+  	   margin: -9999px 0 0 -9999px;
+
+      &_img{
+          display: inline-block;
+          vertical-align: middle;
+          transition: fill 0.3s ease 0s;
+
+          fill: #333;
+
+          &:hover{
+              fill: #0068af;
+          }
+      }
+  }
+
+  &__close-list{
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+
+      width: 2rem;
+      height: 2rem;
+      line-height: 2rem;
+      text-align: center;
+
+      opacity: 0;
+      visibility: hidden;
+  	   margin: -9999px 0 0 -9999px;
+
+      &:hover{
+          opacity: 1;
+      }
+  }
+
+  &__list{
+      margin: 0;
+      padding: 0;
+
+      transition: all 0.3s ease 0s;
+  }
 
   &__item{
     display: inline-block;
@@ -20,9 +74,10 @@ ctx = '.nav'
 
   &__link{
     color: #333;
+    opacity: .8;
     display: block;
     text-decoration: none;
-    transition: color 0.3s ease 0s;
+    transition: color, opacity 0.3s ease 0s;
 
     &_current{
       color: #0068af;
@@ -30,12 +85,59 @@ ctx = '.nav'
   }
 
   &__link:hover{
+    opacity: 1;
     color: #0068af;
   }
 
-  @media only screen and (min-width: 800px) {
-    &{
-      font-size: 1.2rem;
+}
+
+@media only screen and (max-width: 799px) {
+    {ctx}{
+        &_visible{
+            {ctx}__list{
+                transform: translate(0px, 0);
+                opacity: 1;
+            }
+        }
+
+        &__toggle{
+            opacity: 1;
+            visibility: visible;
+            margin: 0;
+            display: inline-block;
+        }
+
+        &__close-list{
+            opacity: .5;
+            visibility: visible;
+            margin: 0;
+        }
+
+        &__list{
+            position: fixed;
+            top: 0;
+            box-sizing: border-box;
+
+            height: 100%;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.99);
+
+            padding-top: 3rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+
+            z-index: 10;
+            overflow-y: auto;
+
+            transform: translate(0px, -100%);
+        }
+
+        &__item{
+            display: block;
+            line-height: 1.8rem;
+            border-bottom: 1px solid #f2f2f2;
+        }
+
+
     }
-  }
 }

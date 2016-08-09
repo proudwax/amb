@@ -1,8 +1,7 @@
-// modules.define('carousel', ['i-bem__dom', 'jquery', 'jquery__slick', 'events__channels', 'page'], function(provide, BEMDOM, $, Slick, channels, Page) {
 modules.define('carousel', ['i-bem__dom', 'jquery', 'jquery__slick', 'events__channels'], function(provide, BEMDOM, $, Slick, channels) {
 
-// provide(BEMDOM.decl({ block: this.name, modName: 'slick', modVal: true }, {
-provide(BEMDOM.decl(this.name, {
+provide(BEMDOM.decl({ block: this.name, modName: 'slick', modVal: true }, {
+// provide(BEMDOM.decl(this.name, {
 	onSetMod : {
 		'js': {
             'inited': function() {
