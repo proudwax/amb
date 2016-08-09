@@ -1,0 +1,42 @@
+ctx = '.carousel_slick'
+{ctx} {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+
+    img{
+    	max-width: 100%;
+    	height: 100vh;
+    	object-fit: cover;
+    }
+}
+
+@media only screen and (min-width: 420px) {
+  {ctx}{
+    max-width: 100%;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  {ctx}{
+    max-width: calc(100% - 160px);
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  {ctx}{
+    max-width: 960px;
+  }
+}
+
+@media only screen and (min-width: 1450px) {
+  {ctx}{
+    max-width: 1200px;
+  }
+}
+
+@media screen and (orientation: portrait) {
+  {ctx}{
+    width: 100%;
+  }
+}
