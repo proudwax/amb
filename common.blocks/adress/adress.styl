@@ -1,0 +1,36 @@
+ctx = '.adress'
+{ctx} {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    text-decoration: none;
+
+    &__icon{
+        margin-right: .5em;
+        height: 1em;
+        width: 1em;
+        fill: #fff;
+        position: relative;
+
+        &_img{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+
+    &__text{
+        color: #fff;
+        text-decoration: none;
+
+        transition: color .3s ease 0s;
+
+        &:before{
+            content: ' ';
+        }
+
+        &:hover{
+            color: #4fc3f1;
+        }
+    }
+}
