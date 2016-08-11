@@ -1,5 +1,6 @@
 ({
     shouldDeps: [
-        { elem: 'phone' }
+      'phone',
+      'email'
     ]
 })

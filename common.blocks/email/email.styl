@@ -1,4 +1,4 @@
-ctx = '.phone'
+ctx = '.email'
 {ctx} {
     display: flex;
     flex-flow: row nowrap;
@@ -14,23 +14,19 @@ ctx = '.phone'
 
         &_img{
             position: absolute;
-            top: 0.1em;
+            top: 0;
             left: 0;
         }
     }
 
     &__text{
-        position: relative;
-
         color: #fff;
         text-decoration: none;
 
         transition: color .3s ease 0s;
 
         &:before{
-            content: '+';
-            position: absolute;
-            left: -.5em;
+            content: ' ';
         }
 
         &:hover{
