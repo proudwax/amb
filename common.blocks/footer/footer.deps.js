@@ -1,5 +1,6 @@
 ({
     shouldDeps: [
+      'group',
       'phone',
       'email'
     ]
