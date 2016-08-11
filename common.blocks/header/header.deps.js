@@ -2,7 +2,7 @@
     shouldDeps: [
       'logo',
       'nav',
-      'contacts',
+      'phone',
       'basket'
     ]
 })

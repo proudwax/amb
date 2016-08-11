@@ -36,8 +36,8 @@
     "enb-js": "^1.1.0",
     "enb-stylus": "^2.3.2",
     "eslint": "^3.2.2",
-    "eslint-config-google": "^0.6.0",
     "eslint-plugin-bem-xjst": "^2.0.0",
+    "eslint-config-google": "^0.6.0",
     "nodemon": "^1.9.2",
     "ym": "^0.1.2"
   },

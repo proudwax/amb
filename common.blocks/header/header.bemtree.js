@@ -8,14 +8,9 @@ block('header').content()(function() {
                   mix: { block: 'header', elem: 'logo' }
               },
               {
-                  block: 'contacts',
-                  mix: { block: 'header', elem: 'contacts' },
-                  mods: { light: true },
-                  content:[
-                      {
-                          elem: 'phone'
-                      }
-                  ]
+                  block: 'phone',
+                  mix: { block: 'header', elem: 'phone' },
+                  mods: { icon: true }
               },
               {
                   block: 'basket',
