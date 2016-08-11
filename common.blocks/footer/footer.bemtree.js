@@ -1,5 +1,8 @@
 block('footer').content()(function() {
     return [
-        'footer'
+        {
+            elem: 'phone',
+            mods: { icon: true }
+        }
     ];
 });
