@@ -4,15 +4,25 @@ block('carousel').mod('slick', true).content()(function() {
         ctx = this.ctx;
 
 	var carousel = data.map(function(item){
-		return {
-			elem: 'item',
-			content: [
-				{
-				    block: 'image',
-				    url: item.img
-				}
-			]
+		var itemSlide = {
+				elem: 'item'
+			},
+			content = new Array();
+
+		content.push({
+			block: 'image',
+			url: item.img
+		});
+
+		if(item.caption != undefined){
+			content.push({
+				elem: 'caption',
+				content: item.caption
+			});
 		}
+		itemSlide.content = content;
+
+		return itemSlide;
 	});
 
 	return carousel;
