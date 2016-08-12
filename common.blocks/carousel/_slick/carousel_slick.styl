@@ -101,7 +101,7 @@ ctx = '.carousel_slick'
 
                 &_center{
                     left: 50%;
-                    transform: translateX(-50%);
+                    transform: translate(-50%, -50%);
                 }
 
                 &_center-right{
@@ -133,6 +133,18 @@ ctx = '.carousel_slick'
 
         .slick-next{
             right: 0;
+        }
+
+        .carousel__caption{
+            &_directions{
+                &_bottom-left, &_top-left, &_center-left{
+                    left: 3rem;
+                }
+
+                &_bottom-right, &_top-right, &_center-right{
+                    right: 3rem;
+                }
+            }
         }
     }
 }
