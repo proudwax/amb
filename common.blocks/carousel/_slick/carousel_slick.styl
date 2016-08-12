@@ -44,10 +44,70 @@ ctx = '.carousel_slick'
             }
         }
 
+        &__item{
+            position: relative;
+        }
+
         &__caption{
             position: absolute;
-            top: 0;
-            
+            box-sizing: border-box;
+            max-width: 50%;
+
+            padding: 1rem;
+
+            &_directions{
+                &_bottom-left, &_bottom-center, &_bottom-right{
+                    bottom: 0;
+                }
+
+                &_bottom-left{
+                    left: 0;
+                }
+
+                &_bottom-center{
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+
+                &_bottom-right{
+                    right: 0;
+                }
+
+                &_top-left, &_top-center, &_top-right{
+                    top: 0;
+                }
+
+                &_top-left{
+                    left: 0;
+                }
+
+                &_top-center{
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+
+                &_top-right{
+                    right: 0;
+                }
+
+                &_center-left, &_center, &_center-right{
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+
+                &_center-left{
+                    left: 0;
+                }
+
+                &_center{
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+
+                &_center-right{
+                    right: 0;
+                }
+            }
         }
     }
 }

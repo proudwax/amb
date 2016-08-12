@@ -10,6 +10,7 @@ block('carousel').mod('slick', true).content()(function() {
 				(item.caption) ? (
 					{
 						elem: 'caption',
+						elemMods: { directions: (item.position) ? (item.position) : 'top-left' },
 						content: item.caption
 					}
 				) : null
