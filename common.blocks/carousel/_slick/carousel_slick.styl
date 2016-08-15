@@ -5,7 +5,7 @@ ctx = '.carousel_slick'
     margin-right: auto;
     position: relative;
 
-    transition: all 0.3s ease 0s
+    transition: all 0.3s ease 0s;
 
     img{
     	max-width: 100%;
@@ -24,6 +24,10 @@ ctx = '.carousel_slick'
 
             &_hidden{
                 opacity: 0;
+            }
+
+            &.slick-initialized{
+                min-height: inherit;
             }
         }
 

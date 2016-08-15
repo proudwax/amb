@@ -8,7 +8,7 @@ block('adress')(
   content()(function(){
       return {
           elem: 'text',
-          content: this._ctx.adress
+          content: this._ctx.adress.text
       }
   }),
 
@@ -20,21 +20,21 @@ block('adress')(
               },
               {
                   elem: 'text',
-                  content: this._ctx.adress
+                  content: this._ctx.adress.text
               }
           ]
       }),
 
       elem('icon')(
           tag()('span'),
-          content()('<svg class="adress__icon_img" height="100%" viewBox="0 0 24 24" width="100%" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/><path d="M0 0h24v24H0z" fill="none"/></svg>')
+          content()('<svg class="adress__icon_img" height="100%" viewBox="0 0 24 24" width="100%" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>')
       )
   ),
 
   elem('text')(
       tag()('a'),
       attrs()(function(){
-          return { href: 'mailto:' + this._ctx.adress }
+          return { href: this._ctx.adress.url }
       })
   )
 

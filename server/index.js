@@ -43,7 +43,9 @@ app
     .use(slashes());
     // TODO: csrf, gzip
 
-var data = require('../data');
+// JSON данные с nginx
+var data = require('../data'),
+    data_goods_list = require('../data-goods-list');
 
 passport.serializeUser(function(user, done) {
     done(null, JSON.stringify(user));
@@ -61,7 +63,7 @@ app.get('/', function(req, res) {
 
   json = Object.assign({}, {view: 'index'}, data);
   render(req, res, json, req.xhr ? { block: 'content' } : null);
-  
+
   // render(req, res, {
   //     view: 'index',
   //     title: 'Main page',
@@ -73,6 +75,13 @@ app.get('/', function(req, res) {
   //         }
   //     }
   // })
+});
+
+app.get('/catalog/', function(req, res) {
+
+  json = Object.assign({}, {view: 'goods-list'}, data_goods_list);
+  render(req, res, json, req.xhr ? { block: 'content' } : null);
+
 });
 
 app.get('*', function(req, res) {

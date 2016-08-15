@@ -19,7 +19,8 @@ block('footer').content()(function() {
                     mods: { icon: true }
                 },
                 {
-                    elem: 'adress',
+                    block: 'adress',
+                    mix: { block: 'footer', elem: 'adress' },
                     mods: { icon: true }
                 }
             ]

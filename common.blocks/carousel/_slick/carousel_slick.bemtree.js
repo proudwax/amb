@@ -1,5 +1,5 @@
 block('carousel').mod('slick', true).content()(function() {
-	return this.data.carousel.map(function(item){
+	return typeof this.data.carousel == 'object' ? this.data.carousel.map(function(item){
 		return {
 			elem: 'item',
 			content: [
@@ -16,5 +16,5 @@ block('carousel').mod('slick', true).content()(function() {
 				) : null
 			]
 		};
-	});
+	}) : null;
 })
