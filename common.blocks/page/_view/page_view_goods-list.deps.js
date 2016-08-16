@@ -6,7 +6,7 @@
         'header',
         { block: 'carousel', mods: { slick: true } },
         'sticky',
-        'content',
+        'goods-list',
         'layout',
         'filter',
         'footer'

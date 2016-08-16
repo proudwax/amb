@@ -14,36 +14,11 @@ block('page').mod('view', 'goods-list').content()(function() {
           ]
         },
         {
-            block: 'carousel',
-            mods: { slick: true }
+          block: 'carousel',
+          mods: { slick: true }
         },
         {
-            block: 'layout',
-            content: [
-              {
-                elem: 'row',
-                content: [
-                  {
-                    elem: 'col',
-                    elemMods: { main: true },
-                    content: [
-                      {
-                        block: 'content'
-                      }
-                    ]
-                  },
-                  {
-                    elem: 'col',
-                    elemMods: { sidebar: true },
-                    content: [
-                      {
-                        block: 'filter'
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
+          block: 'goods-list'
         },
         {
             block: 'footer'

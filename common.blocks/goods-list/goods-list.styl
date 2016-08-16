@@ -1,0 +1,68 @@
+ctx = '.footer'
+{ctx} {
+  padding: .5rem 0;
+  background-color: #13629a;
+  margin-top: 2rem;
+  color: #fff;
+
+  &__container{
+    width: 100%;
+    margin: 0 auto;
+
+    display: flex;
+    flex: 0 1 auto;
+    flex-flow: row wrap;
+  }
+
+  &__logo{
+      width: 33.333%;
+  }
+
+  &__contacts{
+      width: 33.333%;
+      justify-content: center;
+
+      font-size: 13px;
+      line-height: 15px;
+  }
+}
+
+@media only screen and (min-width: 420px) {
+  {ctx}{
+      &__container{
+          max-width: 100%;
+      }
+  }
+}
+
+@media only screen and (min-width: 800px) {
+    {ctx}{
+        &__container{
+            max-width: calc(100% - 160px);
+        }
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    {ctx}{
+        &__container{
+            max-width: 960px;
+        }
+    }
+}
+
+@media only screen and (min-width: 1450px) {
+    {ctx}{
+        &__container{
+            max-width: 1200px;
+        }
+    }
+}
+
+@media screen and (orientation: portrait) {
+    {ctx}{
+        &__container{
+            width: 100%;
+        }
+    }
+}
