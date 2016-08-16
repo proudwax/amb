@@ -18,7 +18,8 @@ block('page').mod('view', 'goods-list').content()(function() {
           mods: { slick: true }
         },
         {
-          block: 'goods-list'
+          block: 'goods-list',
+          mix: { block: 'layout' }
         },
         {
             block: 'footer'

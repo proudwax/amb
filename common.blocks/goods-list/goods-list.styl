@@ -1,68 +1,54 @@
-ctx = '.footer'
+ctx = '.goods-list'
 {ctx} {
-  padding: .5rem 0;
-  background-color: #13629a;
-  margin-top: 2rem;
-  color: #fff;
+  display: flex;
+  flex-flow: row wrap;
 
-  &__container{
-    width: 100%;
-    margin: 0 auto;
+  &__item{
+    flex-basis: 100%;
+    max-width: 100%;
 
-    display: flex;
-    flex: 0 1 auto;
-    flex-flow: row wrap;
-  }
-
-  &__logo{
-      width: 33.333%;
-  }
-
-  &__contacts{
-      width: 33.333%;
-      justify-content: center;
-
-      font-size: 13px;
-      line-height: 15px;
+    background: rgba(255, 0, 0, .5);
   }
 }
 
 @media only screen and (min-width: 420px) {
   {ctx}{
-      &__container{
-          max-width: 100%;
-      }
+    &__item{
+      flex-basis: 50%;
+      max-width: 50%;
+    }
   }
 }
 
 @media only screen and (min-width: 800px) {
-    {ctx}{
-        &__container{
-            max-width: calc(100% - 160px);
-        }
+  {ctx}{
+    &__item{
+      flex-basis: 33.333%;
+      max-width: 33.333%;
     }
+  }
 }
 
 @media only screen and (min-width: 1200px) {
-    {ctx}{
-        &__container{
-            max-width: 960px;
-        }
+  {ctx}{
+    &__item{
+      flex-basis: 25%;
+      max-width: 25%;
     }
+  }
 }
 
 @media only screen and (min-width: 1450px) {
-    {ctx}{
-        &__container{
-            max-width: 1200px;
-        }
+  {ctx}{
+    &__item{
+      flex-basis: 20%;
+      max-width: 20%;
     }
+  }
 }
 
 @media screen and (orientation: portrait) {
-    {ctx}{
-        &__container{
-            width: 100%;
-        }
-    }
+  {ctx}{
+    width: 100%;
+  }
 }
