@@ -5,20 +5,7 @@ block('goods-list').content()(function() {
             content: [
                 {
                     block: 'goods',
-                    content: [
-                        {
-                            elem: 'title',
-                            content: item.name
-                        },
-                        {
-                            elem: 'price',
-                            content: item.price.current
-                        },
-                        {
-                            elem: 'image',
-                            content: item.preview
-                        }
-                    ]
+                    properties: item
                 }
             ]
         };

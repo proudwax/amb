@@ -1,0 +1,7 @@
+({
+    shouldDeps: [
+      'image',
+      'rub',
+      'button'
+    ]
+})
