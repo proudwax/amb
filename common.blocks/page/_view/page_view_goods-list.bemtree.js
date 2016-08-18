@@ -21,8 +21,28 @@ block('page').mod('view', 'goods-list').content()(function() {
             block: 'layout',
             content: [
                 {
-                    block: 'goods-list',
-                    mix: { block: 'layout', elem: 'row' }
+                  elem: 'row',
+                  content: [
+                    {
+                      elem: 'col',
+                      elemMods: { sidebar: true },
+                      content: [
+                        {
+                          block: 'filter'
+                        }
+                      ]
+                    },
+                    {
+                      elem: 'col',
+                      elemMods: { main: true },
+                      content: [
+                        {
+                          block: 'goods-list',
+                          mods: { main: true }
+                        }
+                      ]
+                    }
+                  ]
                 }
             ]
         },

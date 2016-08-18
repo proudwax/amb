@@ -13,11 +13,16 @@ block('goods').content()(function() {
             src: data.preview
         },
         {
-            elem: 'price',
-            content: data.price.current
-        },
-        {
-            elem: 'actions'
+            elem: 'group',
+            content: [
+                {
+                    elem: 'price',
+                    content: data.price.current
+                },
+                {
+                    elem: 'actions'
+                }
+            ]
         }
     ];
 });

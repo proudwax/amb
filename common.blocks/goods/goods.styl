@@ -13,7 +13,7 @@ ctx = '.goods'
     &:before{
         content: '';
         display: block;
-        padding-bottom: 150%;
+        padding-bottom: 130%;
     }
 
     &:hover{
@@ -37,7 +37,13 @@ ctx = '.goods'
 
         font-size: 21px;
         font-weight: 300;
-        line-height: 38px;
+        line-height: 24px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+
+        {ctx}__link{
+            white-space: nowrap;
+        }
     }
 
     &__link{
@@ -64,8 +70,28 @@ ctx = '.goods'
         }
     }
 
+    &__group{
+        position: relative;
+
+        {ctx}__price{
+            float: left;
+        }
+
+        {ctx}__actions{
+            float: right;
+        }
+    }
+
     &__price{
+        display: inline-block;
+
         font-size: 18px;
+        line-height: 38px;
+        font-weight: 500;
+    }
+
+    &__actions{
+        display: inline-block;
         line-height: 38px;
     }
 }

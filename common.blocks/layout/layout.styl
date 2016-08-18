@@ -29,11 +29,16 @@ ctx = '.layout'
     &_sidebar{
       flex-basis: 100%;
       max-width: 100%;
+
+      background: #fff;
+      border-right: 1px solid #d9d9d9;
     }
 
     &_main{
       flex-basis: 100%;
       max-width: 100%;
+
+      background: #fff;
     }
 
     @media only screen and (max-width: 419px) {
@@ -95,6 +100,18 @@ ctx = '.layout'
 @media only screen and (min-width: 1450px) {
   {ctx}{
     max-width: 1200px;
+
+    &__col{
+      &_sidebar{
+        flex-basis: 20%;
+        max-width: 20%;
+      }
+
+      &_main{
+        flex-basis: 80%;
+        max-width: 80%;
+      }
+    }
   }
 }
 
