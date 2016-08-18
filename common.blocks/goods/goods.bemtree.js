@@ -17,7 +17,7 @@ block('goods').content()(function() {
             content: data.price.current
         },
         {
-            elem: 'button'
+            elem: 'actions'
         }
     ];
 });

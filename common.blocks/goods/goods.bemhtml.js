@@ -54,12 +54,34 @@ block('goods')(
         })
     ),
 
-    elem('button')(
+    elem('actions')(
         content()(function(){
             return {
-                block: 'button',
-                mods: { theme: 'islands' },
-                text: 'Купить'
+                block: 'control-group',
+                content: [
+                    {
+                        block: 'button',
+                        mods: { theme: 'amb', size: 'm', text: 'hidden' },
+                        text: 'Быстрый просмотр',
+                        icon: [
+                            {
+                                block: 'icon',
+                                mods: { type: 'preview' }
+                            }
+                        ]
+                    },
+                    {
+                        block: 'button',
+                        mods: { theme: 'amb', size: 'm', view: 'action' },
+                        text: 'Купить',
+                        icon: [
+                            {
+                                block: 'icon',
+                                mods: { type: 'cart' }
+                            }
+                        ]
+                    }
+                ]
             }
         })
     )
