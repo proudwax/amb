@@ -1,6 +1,6 @@
 ({
     shouldDeps: [
         { block: 'functions', elems: ['throttle'] },
-		    { block: 'events', elems: ['channels'] }
+		{ block: 'events', elems: ['channels'] }
     ]
 })

@@ -18,31 +18,17 @@ block('page').mod('view', 'goods-list').content()(function() {
           mods: { slick: true }
         },
         {
-            block: 'layout',
+            block: 'goods-list',
+            mods: { aside: 'left' },
+            asideToggleText: 'Фильтр',
             content: [
                 {
-                  elem: 'row',
-                  content: [
-                    {
-                      elem: 'col',
-                      elemMods: { sidebar: true },
-                      content: [
+                    elem: 'aside',
+                    content: [
                         {
-                          block: 'filter'
+                            block: 'filter'
                         }
-                      ]
-                    },
-                    {
-                      elem: 'col',
-                      elemMods: { main: true },
-                      content: [
-                        {
-                          block: 'goods-list',
-                          mods: { main: true }
-                        }
-                      ]
-                    }
-                  ]
+                    ]
                 }
             ]
         },
