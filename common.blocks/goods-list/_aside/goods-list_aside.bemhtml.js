@@ -34,5 +34,27 @@ block('goods-list').mod('aside', 'left')(
               this._asideToggleText
           ]
       })
+  ),
+
+  elem('aside')(
+    content()(function(){
+      return [
+        {
+          elem: 'aside-close'
+        },
+        applyNext()
+      ]
+    })
+  ),
+
+  elem('aside-close')(
+    tag()('a'),
+    attrs()({ href: '#' }),
+
+    content()(function(){
+      return {
+        block: 'icon'
+      }
+    })
   )
 )

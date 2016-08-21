@@ -14,10 +14,6 @@ block('page').mod('view', 'goods-list').content()(function() {
           ]
         },
         {
-          block: 'carousel',
-          mods: { slick: true }
-        },
-        {
             block: 'goods-list',
             mods: { aside: 'left' },
             asideToggleText: 'Фильтр',

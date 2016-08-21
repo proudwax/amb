@@ -54,7 +54,7 @@ ctx = '.goods-list_aside_left'
             box-sizing: border-box;
             width: 200px;
 
-            padding: .5rem;
+            padding: 3rem .5rem.5rem;
             border-right: 1px solid rgba(0, 0, 0, .2);
 
             position: fixed;
@@ -70,6 +70,28 @@ ctx = '.goods-list_aside_left'
 
             &_visible{
                 transform: translateX(0);
+            }
+        }
+
+        &__aside-close{
+            position: absolute;
+            right: 1rem;
+            top: 1rem;
+
+            & .icon{
+                background: url('../image/close.svg');
+                background-repeat: no-repeat;
+
+                width: 14px;
+                height: 14px;
+
+                opacity: .3;
+                transition: opacity 0.3s ease 0s;
+
+                &:hover{
+                    opacity: 1;
+                    cursor: pointer;
+                }
             }
         }
 
@@ -131,9 +153,16 @@ ctx = '.goods-list_aside_left'
             position: relative;
             z-index: 10;
 
+            padding-top: .5rem;
+
             height: auto;
             width: 25%;
             transform: translateX(0);
+        }
+
+        {ctx} &__aside-close{
+            visibility: hidden;
+            display: none;
         }
 
         {ctx} &__showcase{

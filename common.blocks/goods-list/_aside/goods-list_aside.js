@@ -9,6 +9,12 @@ provide(BEMDOM.decl(this.name, {
 				this._anchor = this.elem('aside-toggle');
 				this._aside = this.elem('aside')
 
+				this.elem('aside-close').on('pointerclick', function(e){
+					e.preventDefault();
+
+					_this.delMod(_this._aside, 'visible');
+				});
+
 				this._anchor.on('pointerclick', function(e){
 					e.preventDefault();
 
