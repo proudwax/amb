@@ -26,7 +26,10 @@ ctx = '.goods-list_aside_left'
         &__aside-toggle{
             display: inline-block;
             line-height: 28px;
+            padding-top: .5rem;
+            padding-left: 1rem;
             padding-right: 6px;
+            padding-bottom: .5rem;
 
             box-sizing: border-box;
 
@@ -95,11 +98,45 @@ ctx = '.goods-list_aside_left'
             }
         }
 
+        &__show-styles{
+            float: right;
+            padding: .5rem 1rem;
+
+            & .icon > svg{
+                width: 18px;
+                height: 18px;
+            }
+        }
+
         &__showcase{
             width: 100%;
 
             display: flex;
             flex-flow: row wrap;
+
+            &_style_line{
+                .goods-list{
+                    &__item{
+                        flex-basis: 100%;
+                        max-width: 100%;
+                        border-right: 0;
+                    }
+                }
+                .goods{
+                    &__image{
+                        width: 25%;
+                    }
+
+                    &__price{
+                        padding-left: 1rem;
+                    }
+
+                    &__group{
+                        width: 75%;
+                        vertical-align: top;
+                    }
+                }
+            }
         }
 
         &__item{
@@ -109,6 +146,8 @@ ctx = '.goods-list_aside_left'
 
             border-right: 1px solid rgba(0, 0, 0, .2);
             border-bottom: 1px solid rgba(0, 0, 0, .2);
+
+            transition: all 0.3s ease 0s;
         }
     }
 }

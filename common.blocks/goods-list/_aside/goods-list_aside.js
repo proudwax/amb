@@ -7,7 +7,24 @@ provide(BEMDOM.decl(this.name, {
 				var _this = this;
 
 				this._anchor = this.elem('aside-toggle');
-				this._aside = this.elem('aside')
+				this._aside = this.elem('aside');
+
+				this.findBlockInside('control-group').bindTo('pointerclick', function(e){
+					e.preventDefault();
+
+					console.log(this.contains(button.domElem[0]));
+
+					this.findBlocksInside('button').map(function(button){
+						if(button.domElem[0] == this){
+							button.setMod('view', 'action');
+							_this.setMod(_this.elem('showcase'), 'style', button.getMod('style'));
+						}else{
+							button.delMod('view');
+						}
+
+					}, e.target);
+				});
+
 
 				this.elem('aside-close').on('pointerclick', function(e){
 					e.preventDefault();
@@ -43,6 +60,23 @@ provide(BEMDOM.decl(this.name, {
 		this
 			.delMod(this._aside, 'focused')
 			.delMod(this._aside, 'visible');
+	},
+
+	_targetDOM: function(e, nodeName){
+		var target = e.target;
+
+		if(target.nodeName.toLowerCase() == )
+		console.log(target.parentNode);
+
+		while (target.parentNode !== e.currentTarget) {
+			if(target.parentNode.nodeName.toLowerCase() == nodeName.toLowerCase()){
+				return target.parentNode;
+			}else{
+				target = target.parentNode;
+			}
+		}
+
+		return 'no nodeName in e';
 	},
 
 	getDefaultParams: function() {

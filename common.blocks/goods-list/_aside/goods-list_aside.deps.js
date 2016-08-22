@@ -4,6 +4,8 @@
     ],
     shouldDeps: [
       'goods',
-      'icon'
+      'icon',
+      'control-group',
+      { block : 'button', mods: { theme: 'amb' } }
     ]
 })

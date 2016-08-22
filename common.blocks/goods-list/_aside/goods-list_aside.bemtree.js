@@ -13,7 +13,12 @@ block('goods-list').mod('aside', 'left').content()(function() {
 
     return [
         {
-            elem: 'panel'
+            elem: 'panel',
+            content: [
+                {
+                    elem: 'show-styles'
+                }
+            ]
         },
         {
             elem: 'aside',
