@@ -122,9 +122,11 @@ ctx = '.goods-list_aside_left'
                         border-right: 0;
                     }
                 }
+
                 .goods{
                     &__image{
                         width: 25%;
+                        float: left;
                     }
 
                     &__price{
@@ -132,8 +134,18 @@ ctx = '.goods-list_aside_left'
                     }
 
                     &__group{
+                        float: right;
                         width: 75%;
                         vertical-align: top;
+                    }
+
+                    &__properties{
+                        float: right;
+                        width: 75%;
+                    }
+
+                    &__properties-list{
+                        padding-left: 1rem;
                     }
                 }
             }

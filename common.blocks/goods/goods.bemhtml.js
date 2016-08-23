@@ -42,15 +42,57 @@ block('goods')(
         tag()('a')
     ),
 
+    elem('lable')(
+        tag()('span'),
+
+        content()(function(){
+            data = this.ctx.content;
+
+            return 'до -' + Math.ceil((data.current - data.min) / data.current * 100) + '%';
+        })
+    ),
+
     elem('price')(
         content()(function(){
-            return [
-                applyNext(),
-                {
-                    block: 'rub',
-                    mods: { size: 'small' }
-                }
-            ]
+            data = this.ctx.content;
+
+            if(data.min){
+                return [
+                    {
+                        elem: 'price-current',
+                        content: [
+                            data.min,
+                            {
+                                block: 'rub',
+                                mods: { size: 'small' }
+                            }
+                        ]
+                    },
+                    {
+                        elem: 'price-old',
+                        content: [
+                            data.current,
+                            {
+                                block: 'rub',
+                                mods: { size: 'small' }
+                            }
+                        ]
+                    }
+                ]
+            }else{
+                return [
+                    {
+                        elem: 'price-current',
+                        content: [
+                            data.current,
+                            {
+                                block: 'rub',
+                                mods: { size: 'small' }
+                            }
+                        ]
+                    }
+                ]
+            }
         })
     ),
 
@@ -84,5 +126,37 @@ block('goods')(
                 ]
             }
         })
+    ),
+
+    elem('properties')(
+        content()(function(){
+            return [
+                {
+                    elem: 'properties-list',
+                    content: applyNext()
+                }
+            ];
+        })
+    ),
+
+    elem('properties-list')(
+        tag()('ul'),
+
+        content()(function(){
+            data = this.ctx.content
+
+            return Object.keys(data).map(function(key){
+                return [
+                    {
+                        elem: 'properties-list-item',
+                        content: key + ': ' + data[key]
+                    }
+                ]
+            });
+        })
+    ),
+
+    elem('properties-list-item')(
+        tag()('li')
     )
 )

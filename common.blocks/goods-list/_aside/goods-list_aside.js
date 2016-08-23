@@ -12,10 +12,10 @@ provide(BEMDOM.decl(this.name, {
 				this.findBlockInside('control-group').bindTo('pointerclick', function(e){
 					e.preventDefault();
 
-					console.log(this.contains(button.domElem[0]));
+					// dom.contains(this._aside, $(e.target)) || dom.contains(this._anchor, $(e.target))
 
 					this.findBlocksInside('button').map(function(button){
-						if(button.domElem[0] == this){
+						if(button.domElem[0].contains(this)){
 							button.setMod('view', 'action');
 							_this.setMod(_this.elem('showcase'), 'style', button.getMod('style'));
 						}else{
@@ -60,23 +60,6 @@ provide(BEMDOM.decl(this.name, {
 		this
 			.delMod(this._aside, 'focused')
 			.delMod(this._aside, 'visible');
-	},
-
-	_targetDOM: function(e, nodeName){
-		var target = e.target;
-
-		if(target.nodeName.toLowerCase() == )
-		console.log(target.parentNode);
-
-		while (target.parentNode !== e.currentTarget) {
-			if(target.parentNode.nodeName.toLowerCase() == nodeName.toLowerCase()){
-				return target.parentNode;
-			}else{
-				target = target.parentNode;
-			}
-		}
-
-		return 'no nodeName in e';
 	},
 
 	getDefaultParams: function() {
