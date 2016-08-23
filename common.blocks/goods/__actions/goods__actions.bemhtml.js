@@ -5,7 +5,7 @@ block('goods')(
             data = this.ctx.content;
 
             return {
-                'action': 'http://yazvyazda.ru:3001/' + data.cart_url,
+                'action': data.cart_url,
                 'method': 'post'
             }
         }),
