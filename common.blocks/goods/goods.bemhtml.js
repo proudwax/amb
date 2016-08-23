@@ -96,38 +96,6 @@ block('goods')(
         })
     ),
 
-    elem('actions')(
-        content()(function(){
-            return {
-                block: 'control-group',
-                content: [
-                    {
-                        block: 'button',
-                        mods: { theme: 'amb', size: 'm', text: 'hidden' },
-                        text: 'Быстрый просмотр',
-                        icon: [
-                            {
-                                block: 'icon',
-                                mods: { type: 'preview' }
-                            }
-                        ]
-                    },
-                    {
-                        block: 'button',
-                        mods: { theme: 'amb', size: 'm', view: 'action' },
-                        text: 'Купить',
-                        icon: [
-                            {
-                                block: 'icon',
-                                mods: { type: 'cart' }
-                            }
-                        ]
-                    }
-                ]
-            }
-        })
-    ),
-
     elem('properties')(
         content()(function(){
             return [
@@ -143,7 +111,7 @@ block('goods')(
         tag()('ul'),
 
         content()(function(){
-            data = this.ctx.content
+            data = this.ctx.content;
 
             return Object.keys(data).map(function(key){
                 return [

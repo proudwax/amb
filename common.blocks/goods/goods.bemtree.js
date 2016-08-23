@@ -23,7 +23,8 @@ block('goods').content()(function() {
                     content: data.price
                 },
                 {
-                    elem: 'actions'
+                    elem: 'actions',
+                    content: data.cart
                 }
             ]
         },

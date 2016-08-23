@@ -1,9 +1,7 @@
 ({
     shouldDeps: [
-      'image',
-      'rub',
-      'control-group',
-      { block: 'button', mods: { theme: 'amb', text: 'hidden' } },
-      { block: 'icon', mods: { type: ['preview', 'cart'] } }
+        { elems: ['actions'] },
+        'image',
+        'rub'
     ]
 })
