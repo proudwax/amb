@@ -1,6 +1,6 @@
 modules.define('popup', ['i-bem__dom', 'jquery', 'BEMHTML'], function(provide, BEMDOM, $, BEMHTML) {
 
-provide(BEMDOM.decl({ block: this.name, modName: 'tail', modVal: true }, {	
+provide(BEMDOM.decl({ block: this.name, modName: 'tail', modVal: true }, {
 	onSetMod: {
 		'js': {
             'inited': function() {
@@ -16,6 +16,14 @@ provide(BEMDOM.decl({ block: this.name, modName: 'tail', modVal: true }, {
 
 				if(tail[0]){
 					tail[0].style['margin-left'] = 'calc(0% + ' + (button[0].offsetWidth / 2 - tail[0].offsetWidth / 2) + 'px)';
+				}
+			},
+			'bottom-center': function(){
+				button = this._anchor,
+				tail = this.elem('tail');
+
+				if(tail[0]){
+					tail[0].style['margin-left'] = 'calc(50% - ' + (button[0].offsetWidth / 2 - tail[0].offsetWidth / 2) + 'px)';
 				}
 			},
 			'bottom-right': function(){

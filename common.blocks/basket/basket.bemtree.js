@@ -16,6 +16,7 @@ block('basket').content()(function() {
         {
             block: 'popup',
             mods: { theme: 'amb', target: 'anchor', autoclosable: true, tail: true },
+            directions : ['bottom-right', 'bottom-center'],
             content : 'Содержимое всплывающего окна'
         }
     ]

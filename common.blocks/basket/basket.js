@@ -1,36 +1,48 @@
-modules.define('basket', ['i-bem__dom', 'jquery', 'dom'], function(provide, BEMDOM, $, dom) {
+modules.define('basket', ['i-bem__dom', 'jquery', 'dom', 'functions__throttle'], function(provide, BEMDOM, $, dom, throttle) {
 
 provide(BEMDOM.decl(this.name, {
 	onSetMod : {
 		'js': {
             'inited': function(){
-				var _this = this,
-					link = this.elem('icon'),
-					popup = this.findBlockInside('popup').setAnchor(this);
+				var _this = this;
 
-				console.log(link);
+				this._screenSmall = false;
+				this._link = this.elem('icon');
+				this._popup = this.findBlockInside('popup').setAnchor(this.elem('icon'));
 
-                link.on('click', function(e) {
+                this._link.on('click', function(e) {
 					e.preventDefault();
 
-                    popup.toggleMod('visible');
+                    _this._popup.toggleMod('visible');
                 });
-            }
-        }
-	},
 
-	onElemSetMod: {
-		'aside': {
-			'visible': {
-				true: function(){
-					this.bindToDoc('pointerclick', this._onDocPointerClick);
-				}
+				BEMDOM.win.outerWidth() < 800 ?  this.setMod('screen-small', true) : this.delMod('screen-small');
+
+				throttle(this._resizeWin(), 300);
+            }
+        },
+
+		'screen-small': {
+			true: function(){
+				setTimeout((function(){
+					this._popup.params.directions.splice(0, 0, 'bottom-center');
+					this._popup.redraw();
+				}).bind(this), 300);
+			},
+
+			'': function(){
+				setTimeout((function(){
+					this._popup.params.directions.splice(0, 1);
+					this._popup.redraw();
+				}).bind(this), 300);
 			}
 		}
 	},
 
-	_onDocPointerClick: function(e){
-
+	_resizeWin: function(e){
+		this.bindToWin('resize', function(e){
+			BEMDOM.win.outerWidth() < 800 ?  this.setMod('screen-small', true) : this.delMod('screen-small');
+		});
 	},
 
 	getDefaultParams: function() {
