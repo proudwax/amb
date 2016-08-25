@@ -1,6 +1,6 @@
 block('basket')(
     js()(true),
-    
+
     content()(function(){
       return applyNext();
     }),
@@ -16,5 +16,5 @@ block('basket')(
               href: this.ctx.url
           }
       })
-    )
+  )
 )

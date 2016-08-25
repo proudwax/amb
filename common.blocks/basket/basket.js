@@ -6,11 +6,11 @@ provide(BEMDOM.decl(this.name, {
             'inited': function(){
 				var _this = this;
 
-				this._screenSmall = false;
 				this._link = this.elem('icon');
 				this._popup = this.findBlockInside('popup').setAnchor(this.elem('icon'));
+				console.log(this._popup);
 
-                this._link.on('click', function(e) {
+                this._link.on('pointerclick', function(e) {
 					e.preventDefault();
 
                     _this._popup.toggleMod('visible');
@@ -22,6 +22,7 @@ provide(BEMDOM.decl(this.name, {
             }
         },
 
+		// Так как в css используется transition: all 0.3s ease 0s; нужно браузеру дать возможность всё преобразовать, а потом только перерисовывать popup
 		'screen-small': {
 			true: function(){
 				setTimeout((function(){

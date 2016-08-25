@@ -4,6 +4,28 @@ block('basket').content()(function() {
     data = this.data.cart;
     badge = data.count != 0 ? { elem: 'badge', content: data.count } : null;
 
+    list = typeof data.list === 'undefined' ? data.text : data.list.map(function(item){
+        return {
+            elem: 'item',
+            content: [
+                {
+                    elem: 'item-img',
+                    url: item.url,
+                    src: item.image
+                },
+                {
+                    elem: 'item-name',
+                    url: item.url,
+                    content: item.name
+                },
+                {
+                    elem: 'item-price',
+                    content: item.price.current
+                }
+            ]
+        }
+    });
+
     return [
             {
             elem: 'icon',
@@ -17,7 +39,15 @@ block('basket').content()(function() {
             block: 'popup',
             mods: { theme: 'amb', target: 'anchor', autoclosable: true, tail: true },
             directions : ['bottom-right', 'bottom-center'],
-            content : 'Содержимое всплывающего окна'
+            secondaryOffset : -12,
+            tailOffset: -12,
+            content : [
+                {
+                    block: 'basket',
+                    elem: 'list',
+                    content: list
+                }
+            ]
         }
     ]
 });
