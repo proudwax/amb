@@ -15,7 +15,7 @@ provide(BEMDOM.decl({ block: this.name, modName: 'tail', modVal: true }, {
 				tail = this.elem('tail');
 
 				if(tail[0]){
-					tail[0].style['margin-left'] = 'calc(0% + ' + (button[0].offsetWidth / 2 - tail[0].offsetWidth / 2) + 'px)';
+					tail[0].style['margin-left'] = 'calc(0% + ' + (button[0].offsetWidth / 2 - tail[0].offsetWidth / 2 + this.params.tailOffset) + 'px)';
 				}
 			},
 			'bottom-center': function(){
@@ -23,15 +23,17 @@ provide(BEMDOM.decl({ block: this.name, modName: 'tail', modVal: true }, {
 				tail = this.elem('tail');
 
 				if(tail[0]){
-					tail[0].style['margin-left'] = 'calc(50% - ' + (button[0].offsetWidth / 2 - tail[0].offsetWidth / 2) + 'px)';
+					tail[0].style['margin-left'] = 'calc(50% - ' + (tail[0].offsetWidth / 2) + 'px)';
 				}
 			},
 			'bottom-right': function(){
 				button = this._anchor,
 				tail = this.elem('tail');
 
+				console.log(this.params.tailOffset);
+
 				if(tail[0]){
-					tail[0].style['margin-left'] = 'calc(100% - ' + (button[0].offsetWidth / 2 + tail[0].offsetWidth / 2) + 'px)';
+					tail[0].style['margin-left'] = 'calc(100% - ' + (button[0].offsetWidth / 2 + tail[0].offsetWidth / 2 + this.params.tailOffset) + 'px)';
 				}
 			},
 			'top-left': function(){
@@ -52,12 +54,19 @@ provide(BEMDOM.decl({ block: this.name, modName: 'tail', modVal: true }, {
 			}
 		}
 	},
-	_getParams : function() {
+
+	_getParams : function(){
 		return [
 			this.params.mainOffset = 12,
 			this.params.viewportOffset = 10
 		];
-    }
+    },
+
+	// getDefaultParams: function(){
+	// 	return {
+	// 		tailOffset: 0
+	// 	};
+	// }
 }));
 
 });

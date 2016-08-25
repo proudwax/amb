@@ -40,7 +40,7 @@ block('basket').content()(function() {
             mods: { theme: 'amb', target: 'anchor', autoclosable: true, tail: true },
             directions : ['bottom-right', 'bottom-center'],
             secondaryOffset : -12,
-            tailOffset: -12,
+            tailOffset: 12,
             content : [
                 {
                     block: 'basket',

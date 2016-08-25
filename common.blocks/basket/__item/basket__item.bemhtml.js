@@ -1,6 +1,6 @@
 block('basket').elem('item')(
     def()(function(){
-        console.log(this.ctx);
+        // console.log(this.ctx);
         return applyNext();
     }),
 
