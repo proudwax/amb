@@ -10,20 +10,23 @@ provide(BEMDOM.decl(this.name, {
 				this._popup = this.findBlockInside('popup').setAnchor(this._link);
 
 				this._link.bindTo('pointerenter', function(e) {
+					clearTimeout(_this._timeOut);
 					_this._popup.setMod('visible');
 				});
 
 				this._popup.bindTo('pointerenter', function(e) {
+					clearTimeout(_this._timeOut);
 					_this._popup.setMod('visible');
 				});
 
 				this._link.bindTo('pointerleave', function(e) {
-					_this._popup.delMod('visible');
+					_this._timeOut = setTimeout(function(){_this._popup.delMod('visible');}, 300);
 				});
 
 				this._popup.bindTo('pointerleave', function(e) {
-					_this._popup.delMod('visible');
+					_this._timeOut = setTimeout(function(){_this._popup.delMod('visible');}, 300);
 				});
+
 
 				BEMDOM.win.outerWidth() < 800 ?  this.setMod('screen-small', true) : this.delMod('screen-small');
 

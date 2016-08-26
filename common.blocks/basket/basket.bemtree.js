@@ -46,8 +46,9 @@ block('basket').content()(function() {
         },
         {
             block: 'popup',
-            mods: { theme: 'amb', target: 'anchor', autoclosable: true, tail: true },
+            mods: { theme: 'amb', target: 'anchor', autoclosable: true/*, tail: true*/ },
             directions : ['bottom-right', 'bottom-center'],
+            // mainOffset: -5,
             secondaryOffset : -12,
             tailOffset: 12,
             content : [
