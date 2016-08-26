@@ -6,15 +6,24 @@ provide(BEMDOM.decl(this.name, {
             'inited': function(){
 				var _this = this;
 
-				this._link = this.elem('icon');
-				this._popup = this.findBlockInside('popup').setAnchor(this.elem('icon'));
-				console.log(this._popup);
+				this._link = this.findBlockInside('button');
+				this._popup = this.findBlockInside('popup').setAnchor(this._link);
 
-                this._link.on('pointerclick', function(e) {
-					e.preventDefault();
+				this._link.bindTo('pointerenter', function(e) {
+					_this._popup.setMod('visible');
+				});
 
-                    _this._popup.toggleMod('visible');
-                });
+				this._popup.bindTo('pointerenter', function(e) {
+					_this._popup.setMod('visible');
+				});
+
+				this._link.bindTo('pointerleave', function(e) {
+					_this._popup.delMod('visible');
+				});
+
+				this._popup.bindTo('pointerleave', function(e) {
+					_this._popup.delMod('visible');
+				});
 
 				BEMDOM.win.outerWidth() < 800 ?  this.setMod('screen-small', true) : this.delMod('screen-small');
 

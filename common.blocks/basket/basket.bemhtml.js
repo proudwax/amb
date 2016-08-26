@@ -7,14 +7,5 @@ block('basket')(
 
     elem('badge')(
       tag()('span')
-    ),
-
-    elem('icon')(
-      tag()('a'),
-      attrs()(function(){
-          return {
-              href: this.ctx.url
-          }
-      })
-  )
+    )
 )
