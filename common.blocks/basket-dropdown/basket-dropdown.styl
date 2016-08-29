@@ -1,0 +1,31 @@
+ctx = '.basket-dropdown'
+{ctx} {
+    position: relative;
+
+    .button_hovered ~ &__dropdown, &__dropdown:hover{
+        right: 0;
+        left: auto;
+
+        opacity: 1;
+    }
+
+    &__dropdown{
+        position: absolute;
+        top: 100%;
+        left: -9999px;
+
+        display: block;
+
+        opacity: 0;
+
+        transition: opacity 0.3s ease 0s;
+    }
+
+    &__list{
+        background: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 10px 20px -5px rgba(0, 0, 0, 0.4);
+
+        margin-top: 4px;
+    }
+}

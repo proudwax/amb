@@ -13,7 +13,7 @@ block('header').content()(function() {
                   mods: { icon: true }
               },
               {
-                  block: 'basket',
+                  block: 'basket-info',
                   mix: { block: 'header', elem: 'basket' }
               }
           ]

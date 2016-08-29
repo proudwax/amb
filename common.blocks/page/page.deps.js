@@ -7,7 +7,6 @@
         { block: 'carousel', mods: { slick: true } },
         'sticky',
         'content',
-        'layout',
         'filter',
         'footer'
     ]

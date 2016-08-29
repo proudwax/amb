@@ -13,18 +13,19 @@ ctx = '.layout'
     flex: 0 1 auto;
     flex-flow: row wrap;
 
-    margin-top: 1rem;
-    margin-left: -.5rem;
-    margin-right: -.5rem;
+    &_between{
+        justify-content: space-between;
+    }
+
+    &_middle{
+        align-items: center;
+    }
   }
 
   &__col{
     box-sizing: border-box;
-    flex-grow: 1;
-    flex-basis: 0;
+    flex: 0 0 auto;
     max-width: 100%;
-    padding-left: .5rem;
-    padding-right: .5rem;
 
     &_sidebar{
       flex-basis: 100%;
