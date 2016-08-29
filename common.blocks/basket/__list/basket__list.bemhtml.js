@@ -1,4 +1,4 @@
-block('basket').elem('item')(
+block('basket').elem('list')(
     def()(function(){
         // console.log(this.ctx);
         return applyNext();

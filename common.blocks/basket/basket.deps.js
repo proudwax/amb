@@ -3,7 +3,7 @@
         { block: 'i-bem', elems: ['dom'] }
     ],
     shouldDeps: [
-        { elems: ['item'] },
+        { elems: ['list'] },
         { block: 'popup', mods: { theme: 'amb', tail: true } },
         { block: 'functions', elems: ['throttle'] },
         { block : 'button', mods: { theme: 'amb', type: 'link' } }
