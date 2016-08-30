@@ -4,6 +4,7 @@ var fs = require('fs'),
     path = require('path'),
     express = require('express'),
     app = express(),
+    got = require('got'),
     bodyParser = require('body-parser'),
     favicon = require('serve-favicon'),
     morgan = require('morgan'),
@@ -60,6 +61,14 @@ app.get('/ping/', function(req, res) {
 });
 
 app.get('/', function(req, res) {
+
+    got(config.tethDomain)
+            .then(function(response) {
+                json = Object.assign({}, { view: 'index', block: 'content' }, JSON.parse(response.body));
+    			// render(req, res, json, req.xhr ? { block: 'content' } : null);
+                console.log(json);
+            })
+    .catch(function(err) { console.error(err); });
 
   json = Object.assign({}, {view: 'index'}, data);
   render(req, res, json, req.xhr ? { block: 'content' } : null);

@@ -4,6 +4,7 @@
     ],
     shouldDeps: [
         { block: 'functions', elems: ['throttle'] },
-        { block : 'button', mods: { theme: 'amb', type: 'link' } }
+        { block : 'button', mods: { theme: 'amb', type: 'link', badge: true } },
+        'rub'
     ]
 })

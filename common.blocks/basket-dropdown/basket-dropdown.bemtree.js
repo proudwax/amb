@@ -2,9 +2,21 @@ block('basket-dropdown').content()(function() {
     // console.log(this.data.cart);
 
     data = this.data.cart;
-    badge = data.count != 0 ? { elem: 'badge', content: data.count } : null;
+    badge = data.count != 0 ? data.count : null;
 
-    list = typeof data.list === 'undefined' ? data.text : data.list.map(function(item){
+    action = {
+        elem: 'action',
+        content: [
+            {
+                block : 'button',
+                mods : { theme: 'amb', size: 'l', type: 'link', view: 'action' },
+                url: data.link,
+                text: 'Оформить'
+            }
+        ]
+    };
+
+    list = typeof data.list === 'undefined' ? { elem: 'empty', content: data.text } : data.list.map(function(item){
         return {
             elem: 'item',
             content: [
@@ -21,15 +33,19 @@ block('basket-dropdown').content()(function() {
                 {
                     elem: 'item-price',
                     content: item.price.current
+                },
+                {
+                    elem: 'item-del'
                 }
             ]
         }
-    });
+    }).concat(action);
 
     return [
         {
-            block : 'button',
-            mods : { theme: 'amb', size: 'm', type: 'link' },
+            block: 'button',
+            mods: { theme: 'amb', size: 'l', type: 'link', badge: true,  disabled: (badge == null ? true : false)  },
+            mix: { block: 'basket-dropdown', elem: 'button-cart' },
             url: data.link,
             badge: badge,
             icon: [
@@ -44,7 +60,9 @@ block('basket-dropdown').content()(function() {
             content: [
                 {
                     elem: 'list',
-                    content: list
+                    content: [
+                        list
+                    ]
                 }
             ]
         }

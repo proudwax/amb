@@ -1,4 +1,5 @@
 module.exports = {
+    tethDomain: 'http://yazvyazda.ru:3001',
     staticFolder: 'static',
     defaultPort: 3000,
     cacheTTL: 30000,

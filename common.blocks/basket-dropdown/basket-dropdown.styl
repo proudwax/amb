@@ -2,7 +2,15 @@ ctx = '.basket-dropdown'
 {ctx} {
     position: relative;
 
-    .button_hovered ~ &__dropdown, &__dropdown:hover{
+    &__empty{
+        width: 350px;
+
+        padding: 2rem;
+
+        text-align: center;
+    }
+
+    .button:hover ~ &__dropdown, &__dropdown:hover{
         right: 0;
         left: auto;
 
@@ -14,18 +22,134 @@ ctx = '.basket-dropdown'
         top: 100%;
         left: -9999px;
 
+        max-width: 400px;
         display: block;
 
         opacity: 0;
 
-        transition: opacity 0.3s ease 0s;
+        transition: opacity 0.5s ease 0s;
+    }
+
+    .sticky & .button{
+        position: relative;
+        left: -9999px;
+
+        opacity: 0;
+
+        transition: opacity 0.5s ease 0s;
+    }
+
+    .sticky_fixed & .button{
+        left: auto;
+        opacity: 1;
     }
 
     &__list{
         background: #fff;
-        border: 1px solid rgba(0, 0, 0, 0.2);
         box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 10px 20px -5px rgba(0, 0, 0, 0.4);
 
         margin-top: 5px;
+
+        max-width: 500px;
+    }
+
+    &__item{
+        box-sizing: border-box;
+        display: flex;
+        flex: 0 0 auto;
+        align-items: center;
+
+        font-size: 15px;
+        line-height: 24px;
+
+        padding: 2vw;
+
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
+        &:last-child{
+            border-bottom: 0;
+        }
+    }
+
+    &__item-img{
+        width: 15vw;
+
+        & img{
+            box-sizing: border-box;
+            width: 100%;
+        }
+    }
+
+    &__item-name{
+        box-sizing: border-box;
+
+        width: 35vw;
+        padding-left: 5vw;
+
+        color: #333;
+        text-decoration: none;
+
+        transition: color 0.3s ease 0s;
+
+        &:hover{
+            color: #0068af;
+        }
+    }
+
+    &__item-price{
+        width: 30vw;
+        padding-left: 5vw;
+    }
+
+    &__item-del{
+
+    }
+
+    &__action{
+        box-sizing: border-box;
+        padding: 1rem;
+        text-align: right;
+    }
+
+    &__button-cart{
+        margin-right: 1rem !important;
+
+        svg{
+            fill: #333;
+        }
+    }
+
+    &__button-del svg{
+        fill: #333;
+    }
+}
+
+@media only screen and (min-width: 420px) {
+    {ctx}{
+        &__item{
+            padding: .5rem 1rem;
+        }
+
+        &__item-img{
+            width: 75px;
+        }
+
+        &__item-name{
+            width: 150px;
+            padding-left: 10px;
+        }
+
+        &__item-price{
+            width: 100px;
+            padding-left: 10px;
+        }
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    {ctx}{
+        &__button-cart{
+            margin-right: 0 !important;
+        }
     }
 }
