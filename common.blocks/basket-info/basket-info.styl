@@ -1,0 +1,64 @@
+ctx = '.basket-info'
+{ctx} {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+
+    height: 48px;
+
+    &__cart-icon{
+        position: relative;
+
+        flex: 0 0 auto;
+    }
+
+    &__icon{
+        position: relative;
+        display: inline-block;
+
+        padding-right: 15px;
+
+        width: 24px;
+        height: 24px;
+
+        fill: #fff;
+    }
+
+    &__badge{
+        position: absolute;
+        left: 15px;
+        top: -10px;
+
+        width: 18px;
+        height: 18px;
+
+        font-size: 10px;
+        line-height: 18px;
+        text-align: center;
+
+        border-radius: 50%;
+
+        color: #fff;
+        background: #0068af;
+    }
+
+    &__cart-text{
+        flex: 0 0 auto;
+
+        font-size: 14px;
+        line-height: 15px;
+        color: #fff;
+    }
+
+    &__link{
+        color: #fff;
+        position: relative;
+        text-decoration: none;
+        transition: color 0.3s ease 0s;
+
+        &:hover{
+            color: #4fc3f1;
+        }
+    }
+
+}

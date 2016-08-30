@@ -1,0 +1,70 @@
+ctx = '.basket-dropdown'
+{ctx} {
+    position: relative;
+
+    .button_hovered ~ &__dropdown, &__dropdown:hover{
+        right: 0;
+        left: auto;
+
+        opacity: 1;
+    }
+
+    &__dropdown{
+        position: absolute;
+        top: 100%;
+        left: -9999px;
+
+        display: block;
+
+        opacity: 0;
+
+        transition: opacity 0.3s ease 0s;
+    }
+
+    &__list{
+        background: #fff;
+        /*border: 1px solid rgba(0, 0, 0, 0.2);*/
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 10px 20px -5px rgba(0, 0, 0, 0.4);
+
+        margin-top: 4px;
+
+        max-width: 500px;
+    }
+
+    &__item{
+        display: flex;
+        flex: 0 0 auto;
+        align-items: center;
+
+        font-size: 15px;
+        line-height: 18px;
+
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
+        &:last-child{
+            border-bottom: 0;
+        }
+    }
+
+    &__item-img{
+        width: 75px;
+
+        & img{
+            box-sizing: border-box;
+            width: 100%;
+            padding: 10px;
+        }
+    }
+
+    &__item-name{
+        box-sizing: border-box;
+
+        width: 150px;
+        padding-left: 10px;
+    }
+
+    &__item-price{
+        width: 100px;
+        padding-left: 10px;
+    }
+}

@@ -7,8 +7,6 @@
         { block: 'carousel', mods: { slick: true } },
         { block: 'goods-list', mods: { aside: 'left' } },
         'sticky',
-        'layout',
-        'filter',
         'footer'
     ]
 })

@@ -1,0 +1,32 @@
+ctx = '.basket'
+{ctx} {
+    &__list{
+        border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    }
+
+    &__item{
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+
+        max-width: 70vw;
+
+        border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    }
+
+    &__item-img{
+        width: 20%;
+
+        & .image{
+            width: 100%;
+        }
+    }
+}
+
+@media only screen and (min-width: 550px) {
+    {ctx}{
+        &__item{
+            max-width: 500px;
+        }
+    }
+}

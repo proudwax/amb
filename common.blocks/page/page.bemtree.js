@@ -5,13 +5,7 @@ block('page').content()(function() {
         },
         {
           block: 'sticky',
-          panelMods: { white: true },
-          content: [
-            {
-              block: 'nav',
-              mix: { block: 'layout' },
-            }
-          ]
+          panelMods: { white: true }
         },
         {
             block: 'carousel',
