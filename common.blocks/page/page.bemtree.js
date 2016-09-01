@@ -12,6 +12,9 @@ block('page').content()(function() {
             mods: { slick: true }
         },
         {
+            block: 'goods-list-promo'
+        },
+        {
             block: 'layout',
             content: [
               {

@@ -65,13 +65,12 @@ app.get('/', function(req, res) {
     got(config.tethDomain)
             .then(function(response) {
                 json = Object.assign({}, { view: 'index', block: 'content' }, JSON.parse(response.body));
-    			// render(req, res, json, req.xhr ? { block: 'content' } : null);
-                console.log(json);
+                render(req, res, json, req.xhr ? { block: 'content' } : null);
             })
     .catch(function(err) { console.error(err); });
 
-  json = Object.assign({}, {view: 'index'}, data);
-  render(req, res, json, req.xhr ? { block: 'content' } : null);
+  // json = Object.assign({}, {view: 'index'}, data);
+  // render(req, res, json, req.xhr ? { block: 'content' } : null);
 
   // render(req, res, {
   //     view: 'index',

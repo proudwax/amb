@@ -1,5 +1,5 @@
 block('basket-dropdown').content()(function() {
-    // console.log(this.data.cart);
+    // console.log(this.data.cart.text);
 
     data = this.data.cart;
     badge = data.count != 0 ? data.count : null;
