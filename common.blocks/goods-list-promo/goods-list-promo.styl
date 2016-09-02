@@ -2,6 +2,8 @@ ctx = '.goods-list-promo'
 {ctx} {
     display: flex;
     flex-flow: row wrap;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 
     &__container{
         box-sizing: border-box;
@@ -41,30 +43,39 @@ ctx = '.goods-list-promo'
 }
 
 @media only screen and (min-width: 800px) {
-  {ctx}{
-    &__item{
-      flex-basis: 33.333%;
-      max-width: 33.333%;
+    {ctx}{
+        &__container{
+            max-width: calc(100% - 160px);
+        }
+        &__item{
+            flex-basis: 33.333%;
+            max-width: 33.333%;
+        }
     }
-  }
 }
 
 @media only screen and (min-width: 1200px) {
-  {ctx}{
-    &__item{
-      flex-basis: 25%;
-      max-width: 25%;
+    {ctx}{
+        &__container{
+            max-width: 960px;
+        }
+        &__item{
+            flex-basis: 25%;
+            max-width: 25%;
+        }
     }
-  }
 }
 
 @media only screen and (min-width: 1450px) {
-  {ctx}{
-    &__item{
-      flex-basis: 20%;
-      max-width: 20%;
+    {ctx}{
+        &__container{
+            max-width: 1200px;
+        }
+        &__item{
+            flex-basis: 20%;
+            max-width: 20%;
+        }
     }
-  }
 }
 
 @media screen and (orientation: portrait) {
