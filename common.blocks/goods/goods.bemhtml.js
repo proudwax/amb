@@ -1,4 +1,6 @@
 block('goods')(
+    js()(true),
+
     content()(function () {
         return {
             elem: 'container',

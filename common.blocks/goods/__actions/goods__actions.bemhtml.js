@@ -31,7 +31,7 @@ block('goods')(
                     content: [
                         {
                             block: 'button',
-                            mods: { theme: 'amb', size: 'm', text: 'hidden' },
+                            mods: { theme: 'amb', size: 'm', text: 'hidden', preview: true },
                             text: 'Быстрый просмотр',
                             icon: [
                                 {

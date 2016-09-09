@@ -16,6 +16,7 @@ ctx = '.goods-list-promo'
 
         background: #fff;
         border: 1px solid rgba(0, 0, 0, .2);
+        box-shadow: 0 -1px 0 #e5e5e5, 0 0 2px rgba(0,0,0,0.12), 0 2px 4px rgba(0,0,0,0.24);
     }
 
     &__item{
@@ -27,6 +28,10 @@ ctx = '.goods-list-promo'
         border-bottom: 1px solid rgba(0, 0, 0, .2);
 
         transition: all 0.3s ease 0s;
+
+        &:nth-last-child(1){
+            border-bottom: 0;
+        }
     }
 }
 
@@ -38,6 +43,10 @@ ctx = '.goods-list-promo'
         &__item{
             flex-basis: 50%;
             max-width: 50%;
+
+            &:nth-last-child(-n + 2){
+                border-bottom: 0;
+            }
         }
     }
 }
@@ -50,6 +59,10 @@ ctx = '.goods-list-promo'
         &__item{
             flex-basis: 33.333%;
             max-width: 33.333%;
+
+            &:nth-last-child(-n + 3){
+                border-bottom: 0;
+            }
         }
     }
 }
@@ -62,6 +75,10 @@ ctx = '.goods-list-promo'
         &__item{
             flex-basis: 25%;
             max-width: 25%;
+
+            &:nth-last-child(-n + 4){
+                border-bottom: 0;
+            }
         }
     }
 }
@@ -74,6 +91,10 @@ ctx = '.goods-list-promo'
         &__item{
             flex-basis: 20%;
             max-width: 20%;
+
+            &:nth-last-child(-n + 5){
+                border-bottom: 0;
+            }
         }
     }
 }
