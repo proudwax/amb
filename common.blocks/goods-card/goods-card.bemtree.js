@@ -25,12 +25,17 @@ block('goods-card').content()(function() {
                     content: Object.keys(data.properties).map(function(key) {
                         return [
                             {
-                                elem: 'properties-key',
-                                content: key
-                            },
-                            {
-                                elem: 'properties-value',
-                                content: data.properties[key]
+                                elem: 'properties-row',
+                                content: [
+                                    {
+                                        elem: 'properties-key',
+                                        content: key
+                                    },
+                                    {
+                                        elem: 'properties-value',
+                                        content: data.properties[key]
+                                    }
+                                ]
                             }
                         ];
                     })

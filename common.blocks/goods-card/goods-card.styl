@@ -34,6 +34,8 @@ ctx = '.goods-card'
         border-right: 1px solid rgba(0, 0, 0, .2);
         border-bottom: 1px solid rgba(0, 0, 0, .2);
 
+        padding: 1rem;
+
         transition: all 0.3s ease 0s;
     }
 
@@ -45,6 +47,56 @@ ctx = '.goods-card'
         border-bottom: 1px solid rgba(0, 0, 0, .2);
 
         transition: all 0.3s ease 0s;
+    }
+
+    &__properties-row{
+        position: relative;
+
+        margin: 0;
+
+        background: #fff;
+    }
+
+    &__properties-key, &__properties-value{
+        display: inline-block;
+        background: inherit;
+
+        width: 50%;
+
+        padding: 0;
+        margin: 0 0 3px;
+    }
+
+    &__properties-value{
+        position: relative;
+        z-index: 1;
+    }
+
+    &__properties-key{
+        background: inherit;
+
+        &:after{
+            content: '';
+            position: absolute;
+            right: 5px;
+            left: 0;
+
+            height: 1px;
+            margin-top: .85em;
+
+            background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAABCAAAAAA+i0toAAAAAnRSTlMA/1uRIrUAAAAMSURBVHheY7j1/z8ABY8C2UtBe8oAAAAASUVORK5CYII=');
+            background-repeat: repeat-x;
+            background-position: 0 0;
+        }
+    }
+
+    &__properties-name{
+        position: relative;
+        z-index: 2;
+
+        padding-right: 5px;
+
+        background: inherit;
     }
 }
 

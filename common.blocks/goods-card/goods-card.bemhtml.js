@@ -12,7 +12,28 @@ block('goods-card')(
         tag()('h2')
     ),
 
-    elem('properties')(
+    elem('properties-row')(
+        tag()('dl')
+    ),
 
+    elem('properties-key')(
+        tag()('dt'),
+
+        content()(function() {
+            return [
+                {
+                    elem: 'properties-name',
+                    content: applyNext()
+                }
+            ]
+        })
+    ),
+
+    elem('properties-value')(
+        tag()('dd')
+    ),
+
+    elem('properties-name')(
+        tag()('span')
     )
 )
