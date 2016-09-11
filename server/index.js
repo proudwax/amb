@@ -92,6 +92,20 @@ app.get('/catalog/', function(req, res) {
 
 });
 
+app.get('/catalog/*', function(req, res) {
+
+    got(config.tethDomain + req.originalUrl)
+            .then(function(response) {
+                json = Object.assign({}, { view: 'goods-card', block: 'content' }, JSON.parse(response.body));
+                render(req, res, json, req.xhr ? { block: 'goods-card' } : null);
+            })
+    .catch(function(err) { console.error(err); });
+
+  // json = Object.assign({}, {view: 'goods-card'}, data_goods_list);
+  // render(req, res, json, req.xhr ? { block: 'goods-card' } : null);
+
+});
+
 app.get('*', function(req, res) {
     res.status(404);
     return render(req, res, { view: '404' });

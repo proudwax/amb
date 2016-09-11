@@ -1,0 +1,165 @@
+ctx = '.carousel_slick-syncing'
+{ctx} {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+
+    transition: all 0.3s ease 0s;
+
+    img{
+    	max-width: 100%;
+    	object-fit: cover;
+    }
+
+    .slick-prev:before, .slick-next:before{
+        color: #0068af;
+    }
+
+    .carousel{
+        &__content{
+            opacity: 1;
+            min-height: 1rem;
+            overflow: hidden;
+            transition: opacity 0.3s ease 0s;
+
+            &_hidden{
+                opacity: 0;
+            }
+
+            &.slick-initialized{
+                min-height: inherit;
+            }
+        }
+
+        &__spin{
+            position: absolute;
+            top: 0;
+            z-index: -1;
+
+            width: 100%;
+            height: 100%;
+            min-height: 10rem;
+
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            opacity: 1;
+            transition: opacity 0.3s ease 0s;
+
+            &_hidden{
+                opacity: 0;
+            }
+        }
+
+        &__content{
+            display: flex;
+            align-items: center;
+        }
+
+        &__for{
+            flex-basis: 70%;
+            max-width: 70%;
+
+            box-sizing: border-box;
+            padding-left: 1rem;
+
+            .carousel__item{
+                cursor: grab;
+
+                &:active{
+                    cursor: grabbing;
+                }
+            }
+        }
+
+        &__nav{
+            flex-basis: 30%;
+            max-width: 30%;
+
+            box-sizing: border-box;
+            /*margin: 3rem;*/
+
+            .carousel__item{
+                box-sizing: border-box;
+                margin: 1rem;
+            }
+
+            .slick-current{
+                box-shadow: 0 2px 5px rgba(0,0,0,0.26);
+            }
+        }
+
+        &__item{
+            position: relative;
+        }
+    }
+}
+
+@media only screen and (max-width: 799px) {
+    {ctx} {
+        .slick-prev:before, .slick-next:before{
+            font-size: 2rem;
+        }
+
+        .slick-prev, .slick-next{
+            width: 2rem;
+            height: 2rem;
+        }
+
+        .slick-next, .slick-prev{
+            z-index: 1;
+        }
+
+        .slick-prev{
+            left: 0;
+        }
+
+        .slick-next{
+            right: 0;
+        }
+
+        .carousel__caption{
+            &_directions{
+                &_bottom-left, &_top-left, &_center-left{
+                    left: 3rem;
+                }
+
+                &_bottom-right, &_top-right, &_center-right{
+                    right: 3rem;
+                }
+            }
+        }
+    }
+}
+/*
+@media only screen and (min-width: 420px) {
+  {ctx}{
+    max-width: 100%;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  {ctx}{
+    max-width: calc(100% - 160px);
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  {ctx}{
+    max-width: 960px;
+  }
+}
+
+@media only screen and (min-width: 1450px) {
+  {ctx}{
+    max-width: 1200px;
+  }
+}
+
+@media screen and (orientation: portrait) {
+  {ctx}{
+    width: 100%;
+  }
+}*/

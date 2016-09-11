@@ -1,4 +1,4 @@
-block('carousel').mod('slick', true)(
+block('carousel').mod('slick-syncing', true)(
     js()(true),
 
     content()(function(){
@@ -18,13 +18,13 @@ block('carousel').mod('slick', true)(
                 ]
             }
         ]
-    })
+    }),
 
-    // elem('item')(
-    // 	tag()('a'),
-    //
-    // 	attrs()(function(){
-    // 		return { href: this.ctx.bg }
-    // 	})
-    // )
+    elem('item')(
+    	tag()('a'),
+
+    	attrs()(function(){
+    		return { href: this.ctx.bg }
+    	})
+    )
 )
