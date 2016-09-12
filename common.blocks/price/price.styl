@@ -1,0 +1,27 @@
+ctx = '.price'
+{ctx} {
+    box-sizing: border-box;
+    position: relative;
+
+    &__old{
+        position: absolute;
+        top: 1em;
+
+        color: rgba(0, 0, 0, 0.5);
+        font-size: smaller;
+
+        &:after{
+            display: block;
+            content: "";
+
+            position: absolute;
+            top: 40%;
+            width: 100%;
+            height: 2px;
+
+            background: rgba(255, 0, 0, 0.5) none repeat scroll 0 0;
+            transform: rotate(-10deg);
+        }
+    }
+
+}

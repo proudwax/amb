@@ -49,54 +49,24 @@ ctx = '.goods-card'
         transition: all 0.3s ease 0s;
     }
 
-    &__properties-row{
-        position: relative;
-
-        margin: 0;
-
-        background: #fff;
+    &__buy{
+        display: flex;
+        align-items: center;
+        margin-bottom: 3rem;
     }
 
-    &__properties-key, &__properties-value{
-        display: inline-block;
-        background: inherit;
+    &__price{
+        flex-basis: 100%;
+        max-width: 100%;
 
-        width: 50%;
-
-        padding: 0;
-        margin: 0 0 3px;
+        font-size: 28px;
+        font-weight: 400;
+        line-height: 32px;
     }
 
-    &__properties-value{
-        position: relative;
-        z-index: 1;
-    }
-
-    &__properties-key{
-        background: inherit;
-
-        &:after{
-            content: '';
-            position: absolute;
-            right: 5px;
-            left: 0;
-
-            height: 1px;
-            margin-top: .85em;
-
-            background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAABCAAAAAA+i0toAAAAAnRSTlMA/1uRIrUAAAAMSURBVHheY7j1/z8ABY8C2UtBe8oAAAAASUVORK5CYII=');
-            background-repeat: repeat-x;
-            background-position: 0 0;
-        }
-    }
-
-    &__properties-name{
-        position: relative;
-        z-index: 2;
-
-        padding-right: 5px;
-
-        background: inherit;
+    &__actions{
+        flex-basis: 100%;
+        max-width: 100%;
     }
 }
 
@@ -122,6 +92,17 @@ ctx = '.goods-card'
         &__carousel{
             flex-basis: 50%;
             max-width: 50%;
+        }
+
+        &__price{
+            flex-basis: 50%;
+            max-width: 50%;
+        }
+
+        &__actions{
+            flex-basis: 50%;
+            max-width: 50%;
+            text-align: right;
         }
     }
 }

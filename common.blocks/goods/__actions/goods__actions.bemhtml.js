@@ -61,15 +61,15 @@ block('goods')(
         tag()('input'),
         attrs()(function(){
             data = this.ctx,
-            psrentAttrs = this.ctx.attrs;
+            parentAttrs = this.ctx.attrs;
 
             attrs = {
                 name: data.name,
                 value: data.val
             }
 
-            Object.keys(psrentAttrs).map(function(key){
-                attrs[key] = psrentAttrs[key];
+            Object.keys(parentAttrs).map(function(key){
+                attrs[key] = parentAttrs[key];
             })
 
             return attrs;

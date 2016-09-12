@@ -17,28 +17,39 @@ block('goods-card').content()(function() {
             elem: 'description',
             content: [
                 {
-                    elem: 'price',
-                    content: data.price.current
+                    elem: 'buy',
+                    content: [
+                        {
+                            elem: 'price',
+                            content: [
+                                {
+                                    block: 'price',
+                                    content:  data.price
+                                }
+                            ]
+                        },
+                        {
+                            elem: 'actions',
+                            content: [
+                                {
+                                    block: 'actions',
+                                    content: data.cart
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    elem: 'color',
+                    content: data.color
                 },
                 {
                     elem: 'properties',
-                    content: Object.keys(data.properties).map(function(key) {
-                        return [
-                            {
-                                elem: 'properties-row',
-                                content: [
-                                    {
-                                        elem: 'properties-key',
-                                        content: key
-                                    },
-                                    {
-                                        elem: 'properties-value',
-                                        content: data.properties[key]
-                                    }
-                                ]
-                            }
-                        ];
-                    })
+                    content: [
+                        {
+                            block: 'properties'
+                        }
+                    ]
                 }
             ]
         },

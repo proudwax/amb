@@ -5,8 +5,10 @@
         ],
         shouldDeps: [
             { block: 'carousel', mods: { 'slick-syncing': true } },
-            'image',
-            'rub'
+            'properties',
+            'actions',
+            'price',
+            'image'
         ]
     }
 ])
