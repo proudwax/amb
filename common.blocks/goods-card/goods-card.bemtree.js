@@ -9,12 +9,17 @@ block('goods-card').content()(function() {
             content: [
                 {
                     elem: 'title',
-                    content: data.name
+                    content: data.title
+                },
+                {
+                    block: 'goods-lable-discount',
+                    mix: { block: this.block, elem: 'lable' },
+                    content: data.price
                 }
             ]
         },
         {
-            elem: 'description',
+            elem: 'specification',
             content: [
                 {
                     elem: 'buy',
@@ -41,7 +46,12 @@ block('goods-card').content()(function() {
                 },
                 {
                     elem: 'color',
-                    content: data.color
+                    content: [
+                        {
+                            block: 'goods-color-option',
+                            content: data.color
+                        }
+                    ]
                 },
                 {
                     elem: 'properties',
@@ -50,6 +60,10 @@ block('goods-card').content()(function() {
                             block: 'properties'
                         }
                     ]
+                },
+                {
+                    elem: 'description',
+                    content: data.desc
                 }
             ]
         },

@@ -6,6 +6,7 @@
         shouldDeps: [
             { elems: ['actions'] },
             'image',
+            'goods-lable-discount',
             'rub'
         ]
     },

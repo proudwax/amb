@@ -86,24 +86,25 @@ app.get('/', function(req, res) {
 });
 
 app.get('/catalog/', function(req, res) {
+    got(config.tethDomain + req.originalUrl)
+            .then(function(response) {
+                json = Object.assign({}, { view: 'goods-list', block: 'goods-list' }, JSON.parse(response.body));
+                render(req, res, json, req.xhr ? { block: 'goods-list' } : null);
+            })
+    .catch(function(err) { console.error(err); });
 
-  json = Object.assign({}, {view: 'goods-list'}, data_goods_list);
-  render(req, res, json, req.xhr ? { block: 'content' } : null);
+  // json = Object.assign({}, {view: 'goods-list'}, data_goods_list);
+  // render(req, res, json, req.xhr ? { block: 'content' } : null);
 
 });
 
 app.get('/catalog/*', function(req, res) {
-
     got(config.tethDomain + req.originalUrl)
             .then(function(response) {
-                json = Object.assign({}, { view: 'goods-card', block: 'content' }, JSON.parse(response.body));
+                json = Object.assign({}, { view: 'goods-card', block: 'goods-card' }, JSON.parse(response.body));
                 render(req, res, json, req.xhr ? { block: 'goods-card' } : null);
             })
     .catch(function(err) { console.error(err); });
-
-  // json = Object.assign({}, {view: 'goods-card'}, data_goods_list);
-  // render(req, res, json, req.xhr ? { block: 'goods-card' } : null);
-
 });
 
 app.get('*', function(req, res) {

@@ -25,6 +25,12 @@ ctx = '.carousel_slick-syncing'
 
             &_hidden{
                 opacity: 0;
+
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                top: 0;
             }
 
             &.slick-initialized{
@@ -35,7 +41,6 @@ ctx = '.carousel_slick-syncing'
         &__spin{
             position: absolute;
             top: 0;
-            z-index: -1;
 
             width: 100%;
             height: 100%;
@@ -50,6 +55,7 @@ ctx = '.carousel_slick-syncing'
 
             &_hidden{
                 opacity: 0;
+                z-index: -1;
             }
         }
 
@@ -79,7 +85,6 @@ ctx = '.carousel_slick-syncing'
             max-width: 30%;
 
             box-sizing: border-box;
-            /*margin: 3rem;*/
 
             .carousel__item{
                 box-sizing: border-box;

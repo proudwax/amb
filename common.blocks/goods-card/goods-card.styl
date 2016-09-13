@@ -20,13 +20,18 @@ ctx = '.goods-card'
     &__header{
         box-sizing: border-box;
         width: 100%;
+        position: relative;
 
         padding: 1rem;
 
         border-bottom: 1px solid rgba(0, 0, 0, .2);
     }
 
-    &__description{
+    &__lable{
+        margin-top: -1rem;
+    }
+
+    &__specification{
         box-sizing: border-box;
         flex-basis: 100%;
         max-width: 100%;
@@ -49,15 +54,24 @@ ctx = '.goods-card'
         transition: all 0.3s ease 0s;
     }
 
+    &__information{
+        box-sizing: border-box;
+        flex-basis: 100%;
+        max-width: 100%;
+
+        padding: 1rem;
+    }
+
     &__buy{
         display: flex;
         align-items: center;
         margin-bottom: 3rem;
+        margin-top: 1rem;
     }
 
     &__price{
-        flex-basis: 100%;
-        max-width: 100%;
+        flex-basis: 50%;
+        max-width: 50%;
 
         font-size: 28px;
         font-weight: 400;
@@ -65,8 +79,17 @@ ctx = '.goods-card'
     }
 
     &__actions{
-        flex-basis: 100%;
-        max-width: 100%;
+        flex-basis: 50%;
+        max-width: 50%;
+        text-align: right;
+    }
+
+    &__color{
+        margin-bottom: 3rem;
+    }
+
+    &__properties{
+        margin-bottom: 3rem;
     }
 }
 
@@ -84,7 +107,7 @@ ctx = '.goods-card'
             max-width: calc(100% - 160px);
         }
 
-        &__description{
+        &__specification{
             flex-basis: 50%;
             max-width: 50%;
         }
@@ -92,17 +115,6 @@ ctx = '.goods-card'
         &__carousel{
             flex-basis: 50%;
             max-width: 50%;
-        }
-
-        &__price{
-            flex-basis: 50%;
-            max-width: 50%;
-        }
-
-        &__actions{
-            flex-basis: 50%;
-            max-width: 50%;
-            text-align: right;
         }
     }
 }
@@ -111,16 +123,6 @@ ctx = '.goods-card'
     {ctx}{
         &__container{
             max-width: 960px;
-        }
-
-        &__description{
-            flex-basis: 50%;
-            max-width: 50%;
-        }
-
-        &__carousel{
-            flex-basis: 50%;
-            max-width: 50%;
         }
     }
 }

@@ -50,7 +50,7 @@ block('goods')(
         content()(function(){
             data = this.ctx.content;
 
-            return 'до -' + Math.ceil((data.current - data.min) / data.current * 100) + '%';
+            return 'до -' + Math.ceil((Number(data.original) - Number(data.current)) / Number(data.original) * 100) + '%';
         })
     ),
 
@@ -58,12 +58,12 @@ block('goods')(
         content()(function(){
             data = this.ctx.content;
 
-            if(data.min){
+            if(Number(data.current) < Number(data.original)){
                 return [
                     {
                         elem: 'price-current',
                         content: [
-                            data.min,
+                            Number(data.current),
                             {
                                 block: 'rub',
                                 mods: { size: 'small' }
@@ -73,7 +73,7 @@ block('goods')(
                     {
                         elem: 'price-old',
                         content: [
-                            data.current,
+                            Number(data.original),
                             {
                                 block: 'rub',
                                 mods: { size: 'small' }
@@ -86,7 +86,7 @@ block('goods')(
                     {
                         elem: 'price-current',
                         content: [
-                            data.current,
+                            Number(data.current),
                             {
                                 block: 'rub',
                                 mods: { size: 'small' }

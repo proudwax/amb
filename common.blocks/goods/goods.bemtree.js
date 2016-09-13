@@ -9,7 +9,11 @@ block('goods').content()(function() {
             url: data.url.full,
             content: data.name
         },
-        (data.price.min ? { elem: 'lable', elemMods: { discount: true }, content: data.price } : null),
+        {
+            block: 'goods-lable-discount',
+            mix: { block: this.block, elem: 'lable' },
+            content: data.price
+        },
         {
             elem: 'image',
             url: data.url.full,
