@@ -1,10 +1,12 @@
-modules.define('goods-list', ['i-bem__dom', 'jquery', 'dom'], function(provide, BEMDOM, $, dom) {
+modules.define('goods-list', ['i-bem__dom', 'jquery', 'dom'], function(provide, BEMDOM, $, dom, GoodsList) {
 
-provide(BEMDOM.decl(this.name, {
+provide(GoodsList.decl({ modName : 'aside', modVal : 'left' }, {
 	onSetMod : {
 		'js': {
             'inited': function(){
 				var _this = this;
+
+				this._lastGoodsInRow(3);
 
 				this._anchor = this.elem('aside-toggle');
 				this._aside = this.elem('aside');

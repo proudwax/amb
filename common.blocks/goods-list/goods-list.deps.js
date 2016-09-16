@@ -1,5 +1,11 @@
 ({
+    mustDeps: [
+        { block : 'i-bem', elems : ['dom'] }
+    ],
     shouldDeps: [
-      'goods'
+        {
+            mods: { aside: true }
+        },
+        'goods',
     ]
 })
