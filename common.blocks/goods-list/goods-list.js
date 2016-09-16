@@ -10,18 +10,15 @@ provide(BEMDOM.decl(this.name, {
 	},
 
 	_lastGoodsInRow: function(lastCount){
-		var _this = this;
+		var _this = this,
+                    length = this.elem('item');
 
 		console.log(this);
 		console.log(this.elem('item')[1]);
 
-		this.toggleMod(this.elem('item')[1], 're', true);
-this.elem('item').map(function(item) {
-			if((_this.elem('item').length - lastCount) < item){
-				_this.delMod(_this.elem('item')[item], 're');
-			}else{
-				_this.setMod(_this.elem('item')[item], 're', true);
-			}
+		
+                this.elem('item').map(function(item) {
+		    this.toggleMod(this.elem('item')[item], 're', length - lastCount < item);	
 		});
 
 	},
