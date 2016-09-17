@@ -1,4 +1,4 @@
-modules.define('goods-list', ['i-bem__dom', 'jquery', 'dom'], function(provide, BEMDOM, $, dom, GoodsList) {
+modules.define('goods-list', ['i-bem__dom', 'jquery', 'dom', 'functions__throttle'], function(provide, BEMDOM, $, dom, throttle, GoodsList) {
 
 provide(GoodsList.decl({ modName : 'aside', modVal : 'left' }, {
 	onSetMod : {
@@ -6,7 +6,11 @@ provide(GoodsList.decl({ modName : 'aside', modVal : 'left' }, {
             'inited': function(){
 				var _this = this;
 
-				this._lastGoodsInRow(3);
+				this._getLastGoods();
+
+				throttle(this.bindToWin('resize load', function(e) {
+					this._getLastGoods();
+				}), 300);
 
 				this._anchor = this.elem('aside-toggle');
 				this._aside = this.elem('aside');
@@ -62,6 +66,22 @@ provide(GoodsList.decl({ modName : 'aside', modVal : 'left' }, {
 		this
 			.delMod(this._aside, 'focused')
 			.delMod(this._aside, 'visible');
+	},
+
+	_getLastGoods: function(){
+		winWidth = BEMDOM.win[0].outerWidth;
+
+		if(winWidth < 419){
+			this._lastGoodsInRow(1);
+		}else if (420 < winWidth < 799) {
+			this._lastGoodsInRow(3);
+		}else if (800 < winWidth < 1199) {
+			this._lastGoodsInRow(2);
+		}else if (1200 < winWidth < 1449) {
+			this._lastGoodsInRow(3);
+		}else{
+			this._lastGoodsInRow(4);
+		}
 	},
 
 	getDefaultParams: function() {

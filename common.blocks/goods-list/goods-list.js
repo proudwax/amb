@@ -9,18 +9,18 @@ provide(BEMDOM.decl(this.name, {
         }
 	},
 
-	_lastGoodsInRow: function(lastCount){
+	_lastGoodsInRow: function(countInRow){
 		var _this = this,
-                    length = this.elem('item');
+            length = this.elem('item').length,
+			lastId = length % countInRow;
 
-		console.log(this);
-		console.log(this.elem('item')[1]);
-
-		
-                this.elem('item').map(function(item) {
-		    this.toggleMod(this.elem('item')[item], 're', length - lastCount < item);	
-		});
-
+		if(length == lastId){
+			_this.setMod(this.elem('item'), 'last-in-row', true);
+		}else{
+			this.elem('item').map(function(item) {
+				_this.setMod($(this), 'last-in-row', length - lastId < item);
+			});
+		}
 	},
 
 	getDefaultParams: function() {
