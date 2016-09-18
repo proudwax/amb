@@ -15,7 +15,7 @@ provide(BEMDOM.decl(this.name, {
 			lastId = length % countInRow;
 
 		if(length == lastId){
-			_this.setMod(this.elem('item'), 'last-in-row', true);
+			this.setMod(this.elem('item'), 'last-in-row', true);
 		}else{
 			this.elem('item').map(function(item) {
 				_this.setMod($(this), 'last-in-row', length - lastId < item);
