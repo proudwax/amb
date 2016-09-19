@@ -1,10 +1,56 @@
 ctx = '.filter'
 {ctx} {
-  box-sizing: border-box;
+    box-sizing: border-box;
 
-  overflow-y: auto;
+    overflow-y: auto;
 
-  &__row{
-    padding: .5rem 0;
-  }
+    &__row{
+        padding: 0 0 1rem;
+    }
+
+    &__title{
+        font-size: 18px;
+        line-height: 24px;
+
+        margin-left: 1px;
+    }
+
+    &__field{
+        position: relative;
+
+        margin-left: 1px;
+    }
+
+    &__lable{
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        margin: 3px 0;
+    }
+
+    &__text{
+        flex: 0 0 auto;
+
+        font-size: 15px;
+        line-height: 30px;
+
+        width: 20px;
+
+        margin-right: 7px;
+    }
+
+    &__input{
+        display: flex;
+        flex-flow: row nowrap;
+
+        align-items: center;
+
+        font-size: 15px;
+        line-height: 30px;
+
+        & > .input{
+            margin-right: 2px;
+            max-width: 4rem;
+        }
+    }
 }

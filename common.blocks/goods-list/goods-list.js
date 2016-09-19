@@ -1,4 +1,4 @@
-modules.define('goods-list', ['i-bem__dom', 'jquery', 'dom'], function(provide, BEMDOM, $, dom) {
+ modules.define('goods-list', ['i-bem__dom', 'jquery', 'dom'], function(provide, BEMDOM, $, dom) {
 
 provide(BEMDOM.decl(this.name, {
 	onSetMod : {
@@ -9,22 +9,18 @@ provide(BEMDOM.decl(this.name, {
         }
 	},
 
-	_lastGoodsInRow: function(lastCount){
-		var _this = this;
+	_lastGoodsInRow: function(countInRow){
+		var _this = this,
+            length = this.elem('item').length,
+			lastId = length % countInRow;
 
-		console.log(this);
-		console.log(this.elem('item')[1]);
-
-		_this.setMod(_this.elem('item')[1], 're', true);
-
-		this.elem('item').map(function(item) {
-			if((_this.elem('item').length - lastCount) < item){
-				_this.delMod(_this.elem('item')[item], 're');
-			}else{
-				_this.setMod(_this.elem('item')[item], 're', true);
-			}
-		});
-
+		if(length == lastId){
+			this.setMod(this.elem('item'), 'last-in-row', true);
+		}else{
+			this.elem('item').map(function(item) {
+				_this.setMod($(this), 'last-in-row', length - lastId < item);
+			});
+		}
 	},
 
 	getDefaultParams: function() {

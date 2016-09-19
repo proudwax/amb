@@ -47,7 +47,7 @@
     "postinstall": "npm run deps",
     "deps": "bower i",
     "make": "node_modules/.bin/enb make",
-    "watch": "node_modules/.bin/chokidar '*.blocks/**' -c 'npm run make'"
+    "watch": "node_modules/.bin/chokidar '*.blocks/**' -c 'node_modules/.bin/enb make'"
   },
   "private": true
 }

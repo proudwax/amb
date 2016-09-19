@@ -98,6 +98,34 @@ app.get('/catalog/', function(req, res) {
 
 });
 
+app.post('/catalog/', function (req, res) {
+
+    // var postData = querystring.stringify({
+    //     'filter_Color[]': 3,
+    //     'nc_filter_set': 1,
+    // });
+    //
+    // var options = {
+    //     headers: {
+    //         'Content-Type': 'application/x-www-form-urlencoded',
+    //         'Content-Length': Buffer.byteLength(postData)
+    //     }
+    // };
+    //
+
+    got.post('http://yazvyazda.ru:3001/catalog/', {'filter_Color[]': 3, 'nc_filter_set': 1}).then(function(response) {
+        res.send(response.body);
+        //console.log(response.body);
+    });
+    // got.post(config.tethDomain + req.originalUrl, req.body)
+    //         .then(function(response) {
+    //             console.log(response.body);
+    //             json = Object.assign({}, { view: 'goods-list', block: 'goods-list' }, JSON.parse(response.body));
+    //             render(req, res, json, req.xhr ? { block: 'goods-list' } : null);
+    //         })
+    // .catch(function(err) { console.error(err); });
+});
+
 app.get('/catalog/*', function(req, res) {
     got(config.tethDomain + req.originalUrl)
             .then(function(response) {

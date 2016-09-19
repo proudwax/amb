@@ -5,13 +5,6 @@ block('goods-list').mod('aside', 'left')(
 
     js()(true),
 
-    content()(function () {
-        return {
-            elem: 'container',
-            content: applyNext()
-        }
-    }),
-
   elem('panel').content()(function(){
       return [
           {
