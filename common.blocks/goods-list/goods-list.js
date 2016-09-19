@@ -15,6 +15,8 @@ provide(BEMDOM.decl(this.name, {
 		console.log(this);
 		console.log(this.elem('item')[1]);
 
+		_this.setMod(_this.elem('item')[1], 're', true);
+
 		this.elem('item').map(function(item) {
 			if((_this.elem('item').length - lastCount) < item){
 				_this.delMod(_this.elem('item')[item], 're');
