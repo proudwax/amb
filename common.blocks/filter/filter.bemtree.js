@@ -98,7 +98,9 @@ block('filter').content()(function() {
                     },
                     {
                         block : 'button',
-                        mods : { theme : 'amb', size : 'l' },
+                        mods : { theme : 'amb', size : 'l', type: 'submit' },
+						name: 'nc_filter_reset',
+						val: 1,
                         text : 'Сбросить'
                     }
                 ]

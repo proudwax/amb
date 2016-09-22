@@ -4,7 +4,6 @@ var fs = require('fs'),
     path = require('path'),
     express = require('express'),
     app = express(),
-    got = require('got'),
     bodyParser = require('body-parser'),
     favicon = require('serve-favicon'),
     morgan = require('morgan'),
@@ -14,6 +13,10 @@ var fs = require('fs'),
     slashes = require('connect-slashes'),
     passport = require('passport'),
     LocalStrategy = require('passport-local').Strategy,
+
+    got = require('got'),
+    request = require('request'),
+    debugHttp = require('debug-http'),
 
     config = require('./config'),
     staticFolder = config.staticFolder,
@@ -92,34 +95,23 @@ app.get('/catalog/', function(req, res) {
                 render(req, res, json, req.xhr ? { block: 'goods-list' } : null);
             })
     .catch(function(err) { console.error(err); });
-
-  // json = Object.assign({}, {view: 'goods-list'}, data_goods_list);
-  // render(req, res, json, req.xhr ? { block: 'content' } : null);
-
 });
 
 app.post('/catalog/', function (req, res) {
+    request.post(
+        config.tethDomain + req.originalUrl,
+        { form: req.body },
+        function (error, response, body) {
+            if (!error && response.statusCode == 200) {
+                // console.log(body);
+                json = Object.assign({}, { view: 'goods-list', block: 'goods-list' }, JSON.parse(body));
+                render(req, res, json, req.xhr ? { block: 'goods-list' } : null);
+            }
+        }
+    );
 
-    // var postData = querystring.stringify({
-    //     'filter_Color[]': 3,
-    //     'nc_filter_set': 1,
-    // });
-    //
-    // var options = {
-    //     headers: {
-    //         'Content-Type': 'application/x-www-form-urlencoded',
-    //         'Content-Length': Buffer.byteLength(postData)
-    //     }
-    // };
-    //
-
-    got.post('http://yazvyazda.ru:3001/catalog/', {'filter_Color[]': 3, 'nc_filter_set': 1}).then(function(response) {
-        res.send(response.body);
-        //console.log(response.body);
-    });
-    // got.post(config.tethDomain + req.originalUrl, req.body)
+    // got.post(config.tethDomain + req.originalUrl, { body: req.body })
     //         .then(function(response) {
-    //             console.log(response.body);
     //             json = Object.assign({}, { view: 'goods-list', block: 'goods-list' }, JSON.parse(response.body));
     //             render(req, res, json, req.xhr ? { block: 'goods-list' } : null);
     //         })
@@ -130,7 +122,7 @@ app.get('/catalog/*', function(req, res) {
     got(config.tethDomain + req.originalUrl)
             .then(function(response) {
                 json = Object.assign({}, { view: 'goods-card', block: 'goods-card' }, JSON.parse(response.body));
-                render(req, res, json, req.xhr ? { block: 'goods-card' } : null);
+                render(req, res, json, req.xhr ? { block: 'goods-card', elem: 'showcase' } : null);
             })
     .catch(function(err) { console.error(err); });
 });

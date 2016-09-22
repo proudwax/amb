@@ -1,5 +1,6 @@
 block('goods-list').mod('aside', 'left').content()(function() {
-    var goods_item = this.data['goods-list'].map(function(item){
+
+    var goods_item = typeof this.data['goods-list'] == 'object' ? this.data['goods-list'].map(function(item){
         return {
             elem: 'item',
             content: [
@@ -9,7 +10,7 @@ block('goods-list').mod('aside', 'left').content()(function() {
                 }
             ]
         };
-    });
+    }) : ({ elem: 'empty', content: 'Товар не найден. Попробуйте изменить параметры подбора' });
 
     return [
         {
