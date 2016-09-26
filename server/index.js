@@ -105,7 +105,7 @@ app.post('/catalog/', function (req, res) {
             if (!error && response.statusCode == 200) {
                 // console.log(body);
                 json = Object.assign({}, { view: 'goods-list', block: 'goods-list' }, JSON.parse(body));
-                render(req, res, json, req.xhr ? { block: 'goods-list' } : null);
+                return render(req, res, json, req.xhr ? { block: 'goods-list', elem: 'showcase' } : null);
             }
         }
     );
