@@ -5,6 +5,7 @@
         ],
         shouldDeps: [
             { elems: ['actions'] },
+            { block: 'list', mods: { 'goods-properties': true } },
             'image',
             'goods-lable-discount',
             'rub'

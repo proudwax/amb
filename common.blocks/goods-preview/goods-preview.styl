@@ -1,0 +1,133 @@
+ctx = '.goods-card'
+{ctx} {
+    box-sizing: border-box;
+    position: relative;
+
+    &__container{
+        box-sizing: border-box;
+        width: 100%;
+        position: relative;
+        margin: 0 auto;
+
+        display: flex;
+        flex-flow: row wrap;
+
+        background: #fff;
+        border: 1px solid rgba(0, 0, 0, .2);
+    }
+
+    &__header{
+        box-sizing: border-box;
+        width: 100%;
+        position: relative;
+
+        padding: 1rem;
+
+        border-bottom: 1px solid rgba(0, 0, 0, .2);
+    }
+
+    &__lable{
+        margin-top: -1rem;
+    }
+
+    &__specification{
+        box-sizing: border-box;
+        flex-basis: 100%;
+        max-width: 100%;
+
+        border-right: 1px solid rgba(0, 0, 0, .2);
+        border-bottom: 1px solid rgba(0, 0, 0, .2);
+
+        padding: 1rem;
+
+        transition: all 0.3s ease 0s;
+    }
+
+    &__carousel{
+        box-sizing: border-box;
+        flex-basis: 100%;
+        max-width: 100%;
+
+        border-bottom: 1px solid rgba(0, 0, 0, .2);
+
+        transition: all 0.3s ease 0s;
+    }
+
+    &__buy{
+        display: flex;
+        align-items: center;
+        margin-bottom: 3rem;
+        margin-top: 1rem;
+    }
+
+    &__price{
+        flex-basis: 50%;
+        max-width: 50%;
+
+        font-size: 28px;
+        font-weight: 400;
+        line-height: 32px;
+    }
+
+    &__actions{
+        flex-basis: 50%;
+        max-width: 50%;
+        text-align: right;
+    }
+
+    &__color{
+        margin-bottom: 3rem;
+    }
+
+    &__properties{
+        margin-bottom: 3rem;
+    }
+}
+
+@media only screen and (min-width: 420px) {
+    {ctx}{
+        &__container{
+            max-width: 100%;
+        }
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    {ctx}{
+        &__container{
+            max-width: calc(100% - 160px);
+        }
+
+        &__specification{
+            flex-basis: 50%;
+            max-width: 50%;
+        }
+
+        &__carousel{
+            flex-basis: 50%;
+            max-width: 50%;
+        }
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    {ctx}{
+        &__container{
+            max-width: 960px;
+        }
+    }
+}
+
+@media only screen and (min-width: 1450px) {
+    {ctx}{
+        &__container{
+            max-width: 1200px;
+        }
+    }
+}
+
+@media screen and (orientation: portrait) {
+  {ctx}{
+    width: 100%;
+  }
+}

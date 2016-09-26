@@ -11,7 +11,8 @@ block('goods')(
         }),
 
         content()(function(){
-            data = this.ctx.content.inputs;
+            data = this.ctx.content.inputs,
+            url = this.ctx.url;
 
             inputs = data.map(function(input){
                 return {
@@ -31,6 +32,7 @@ block('goods')(
                     content: [
                         {
                             block: 'button',
+                            js: { url: url },
                             mods: { theme: 'amb', size: 'm', text: 'hidden', preview: true },
                             text: 'Быстрый просмотр',
                             icon: [

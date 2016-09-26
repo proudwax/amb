@@ -18,7 +18,7 @@ provide(BEMDOM.decl(this.name, {
 			this.setMod(this.elem('item'), 'last-in-row', true);
 		}else{
 			this.elem('item').map(function(item) {
-				_this.setMod($(this), 'last-in-row', length - lastId < item);
+				_this.setMod($(this), 'last-in-row', length - lastId <= item);
 			});
 		}
 	},

@@ -102,31 +102,11 @@ block('goods')(
         content()(function(){
             return [
                 {
-                    elem: 'properties-list',
+                    block: 'list',
+                    mods: { 'goods-properties': true },
                     content: applyNext()
                 }
             ];
         })
-    ),
-
-    elem('properties-list')(
-        tag()('ul'),
-
-        content()(function(){
-            data = this.ctx.content;
-
-            return Object.keys(data).map(function(key){
-                return [
-                    {
-                        elem: 'properties-list-item',
-                        content: key + ': ' + data[key]
-                    }
-                ]
-            });
-        })
-    ),
-
-    elem('properties-list-item')(
-        tag()('li')
     )
 )

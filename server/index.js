@@ -16,7 +16,6 @@ var fs = require('fs'),
 
     got = require('got'),
     request = require('request'),
-    debugHttp = require('debug-http'),
 
     config = require('./config'),
     staticFolder = config.staticFolder,
@@ -67,7 +66,7 @@ app.get('/', function(req, res) {
 
     got(config.tethDomain)
             .then(function(response) {
-                json = Object.assign({}, { view: 'index', block: 'content' }, JSON.parse(response.body));
+                json = Object.assign({}, { view: 'index' }, JSON.parse(response.body));
                 render(req, res, json, req.xhr ? { block: 'content' } : null);
             })
     .catch(function(err) { console.error(err); });
@@ -91,7 +90,7 @@ app.get('/', function(req, res) {
 app.get('/catalog/', function(req, res) {
     got(config.tethDomain + req.originalUrl)
             .then(function(response) {
-                json = Object.assign({}, { view: 'goods-list', block: 'goods-list' }, JSON.parse(response.body));
+                json = Object.assign({}, { view: 'goods-list' }, JSON.parse(response.body));
                 render(req, res, json, req.xhr ? { block: 'goods-list' } : null);
             })
     .catch(function(err) { console.error(err); });
@@ -103,8 +102,7 @@ app.post('/catalog/', function (req, res) {
         { form: req.body },
         function (error, response, body) {
             if (!error && response.statusCode == 200) {
-                // console.log(body);
-                json = Object.assign({}, { view: 'goods-list', block: 'goods-list' }, JSON.parse(body));
+                json = Object.assign({}, { view: 'goods-list' }, JSON.parse(body));
                 return render(req, res, json, req.xhr ? { block: 'goods-list', elem: 'showcase' } : null);
             }
         }
@@ -122,9 +120,22 @@ app.get('/catalog/*', function(req, res) {
     got(config.tethDomain + req.originalUrl)
             .then(function(response) {
                 json = Object.assign({}, { view: 'goods-card', block: 'goods-card' }, JSON.parse(response.body));
-                render(req, res, json, req.xhr ? { block: 'goods-card', elem: 'showcase' } : null);
+                render(req, res, json, req.xhr ? { block: 'goods-card' } : null);
             })
     .catch(function(err) { console.error(err); });
+});
+
+app.post('/catalog/*', function (req, res) {
+    request.post(
+        config.tethDomain + req.originalUrl,
+        { form: req.body },
+        function (error, response, body) {
+            if (!error && response.statusCode == 200) {
+                json = Object.assign({}, { view: 'goods-preview' }, JSON.parse(body));
+                return render(req, res, json, req.xhr ? { block: 'goods-preview' } : null);
+            }
+        }
+    );
 });
 
 app.get('*', function(req, res) {

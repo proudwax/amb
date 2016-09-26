@@ -1,7 +1,7 @@
 block('goods').content()(function() {
     var data = this.ctx.properties;
 
-    // console.log(data.properties);
+    // console.log(data);
 
     return [
         {
@@ -28,6 +28,7 @@ block('goods').content()(function() {
                 },
                 {
                     elem: 'actions',
+                    url: data.url.full,
                     content: data.cart
                 }
             ]
