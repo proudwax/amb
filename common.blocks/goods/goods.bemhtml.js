@@ -30,7 +30,7 @@ block('goods')(
         content()(function(){
             return {
                 elem: 'link',
-                attrs: { href: this.ctx.url },
+                attrs: { href: this.ctx.url, title: this.ctx.content },
                 content: applyNext()
             }
         })
