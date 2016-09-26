@@ -5,7 +5,7 @@
         },
         'header',
         { block: 'carousel', mods: { slick: true } },
-        { block: 'goods-list', mods: { aside: 'left' } },
+        { block: 'goods-list', mods: { aside: 'left', style: 'line' } },
         'sticky',
         'footer'
     ]

@@ -7,7 +7,7 @@ block('goods').content()(function() {
         {
             elem: 'title',
             url: data.url.full,
-            content: data.name
+            content: data.title
         },
         {
             block: 'goods-lable-discount',

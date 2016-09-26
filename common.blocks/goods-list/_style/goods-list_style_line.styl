@@ -1,0 +1,43 @@
+ctx = '.goods-list_style_line'
+{ctx} {
+
+    .goods-list{
+        &__item{
+            flex-basis: 100%;
+            max-width: 100%;
+            border-right: 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
+            &:last-child{
+                border-bottom: 0;
+            }
+        }
+    }
+
+    .goods{
+        &__image{
+            width: 25%;
+            float: left;
+        }
+
+        &__price{
+            padding-left: 1rem;
+        }
+
+        &__group{
+            float: right;
+            width: 75%;
+            vertical-align: top;
+        }
+
+        &__properties{
+            float: right;
+            width: 75%;
+        }
+
+        &__properties-list{
+            padding-left: 1rem;
+        }
+    }
+
+}

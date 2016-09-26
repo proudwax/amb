@@ -23,7 +23,7 @@ provide(GoodsList.decl({ modName : 'aside', modVal : 'left' }, {
 					this.findBlocksInside('button').map(function(button){
 						if(button.domElem[0].contains(this)){
 							button.setMod('view', 'action');
-							_this.setMod(_this.elem('showcase'), 'style', button.getMod('style'));
+							_this.setMod('style', button.getMod('style'));
 						}else{
 							button.delMod('view');
 						}
