@@ -87,6 +87,15 @@ app.get('/', function(req, res) {
   // })
 });
 
+app.get('/cart/', function(req, res) {
+    got(config.tethDomain + req.originalUrl)
+            .then(function(response) {
+                json = Object.assign({}, { view: 'cart' }, JSON.parse(response.body));
+                render(req, res, json, req.xhr ? { block: 'cart' } : null);
+            })
+    .catch(function(err) { console.error(err); });
+});
+
 app.get('/catalog/', function(req, res) {
     got(config.tethDomain + req.originalUrl)
             .then(function(response) {
