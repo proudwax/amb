@@ -1,5 +1,5 @@
 block('basket-info').content()(function() {
-    data = this.data.cart;
+    data = this.data.basket;
     badge = data.count != 0 ? { elem: 'badge', content: data.count } : null;
 
     return [

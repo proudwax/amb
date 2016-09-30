@@ -147,6 +147,24 @@ app.post('/catalog/*', function (req, res) {
     );
 });
 
+app.post('/netcat/modules/netshop/actions/cart.php', function (req, res) {
+    //console.log(req.body.redirect_url);
+    request.post(
+        config.tethDomain + req.originalUrl,
+        { form: req.body },
+        function (error, response, body) {
+            // console.log(response);
+            // console.log(body);
+            res.status(body);
+            // if (!error && response.statusCode == 200) {
+            //     json = Object.assign({}, { view: 'goods-list' }, JSON.parse(body));
+            //     return render(req, res, json, req.xhr ? { block: 'goods-list' } : null);
+            // }
+        }
+    );
+    res.redirect(req.body.redirect_url);
+});
+
 app.get('*', function(req, res) {
     res.status(404);
     return render(req, res, { view: '404' });

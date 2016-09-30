@@ -1,0 +1,77 @@
+ctx = '.cart'
+{ctx} {
+    box-sizing: border-box;
+    position: relative;
+    margin-top: 1rem;
+
+    &__container{
+        box-sizing: border-box;
+        width: 100%;
+        position: relative;
+        margin: 0 auto;
+
+        display: flex;
+        flex-flow: row wrap;
+
+        background: #fff;
+        border: 1px solid rgba(0, 0, 0, .2);
+    }
+
+    &__header{
+        box-sizing: border-box;
+        width: 100%;
+        position: relative;
+
+        padding: 1rem;
+
+        border-bottom: 1px solid rgba(0, 0, 0, .2);
+    }
+
+
+    &__content{
+        box-sizing: border-box;
+        flex-basis: 100%;
+        max-width: 100%;
+
+        padding: 1rem;
+    }
+
+}
+
+@media only screen and (min-width: 420px) {
+    {ctx}{
+        &__container{
+            max-width: 100%;
+        }
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    {ctx}{
+        &__container{
+            max-width: calc(100% - 160px);
+        }
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    {ctx}{
+        &__container{
+            max-width: 960px;
+        }
+    }
+}
+
+@media only screen and (min-width: 1450px) {
+    {ctx}{
+        &__container{
+            max-width: 1200px;
+        }
+    }
+}
+
+@media screen and (orientation: portrait) {
+  {ctx}{
+    width: 100%;
+  }
+}
